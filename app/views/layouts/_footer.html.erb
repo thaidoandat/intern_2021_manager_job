@@ -1,0 +1,93 @@
+<footer>
+  <div class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 column">
+          <div class="widget">
+            <div class="about_widget">
+              <div class="logo">
+                <a href="index.html" title="">
+                  <%= image_tag Settings.image.logo %>
+                </a>
+              </div>
+              <span>
+                <%= t ".address" %>
+              </span>
+              <span>
+                <%= t ".phone" %>
+              </span>
+              <span>
+                <%= t ".mail" %>
+              </span>
+              <div class="social">
+                <%= link_to "javascript:void(0)" do %>
+                  <i class="fa fa-facebook"></i>
+                <% end %>
+                <%= link_to "javascript:void(0)" do %>
+                  <i class="fa fa-linkedin"></i>
+                <% end %>
+                <%= link_to "javascript:void(0)" do %>
+                  <i class="fa fa-pinterest"></i>
+                <% end %>
+                <%= link_to "javascript:void(0)" do %>
+                  <i class="fa fa-behance"></i>
+                <% end %>
+              </div>
+            </div><!-- About Widget -->
+          </div>
+        </div>
+        <div class="col-lg-3 column">
+          <div class="widget">
+            <h3 class="footer-title">
+              <%= t(".provides") %>
+            </h3>
+            <div class="link_widgets">
+              <div class="row">
+                <div class="col-lg-12">
+                  <%= link_to t(".security") %>
+                  <%= link_to t(".communications") %>
+                  <%= link_to t(".support") %>
+                  <%= link_to t(".license") %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 column">
+          <div class="widget">
+            <h3 class="footer-title">
+              <%= link_to t(".find_jobs"), "#" %>
+            </h3>
+            <div class="link_widgets">
+              <div class="row">
+                <div class="col-lg-12">
+                  <%= link_to t(".hn_jobs"), "#" %>
+                  <%= link_to t(".dn_jobs"), "#" %>
+                  <%= link_to t(".hcm_jobs"), "#" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 column">
+          <div class="widget">
+            <div class="download_widget">
+              <a href="#" title="">
+                <%= image_tag Settings.image.app_store %>
+              </a>
+              <a href="#" title="">
+                <%= image_tag Settings.image.ch_play %>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-line">
+    <span>
+      <%= t(".copy_rights") %>
+    </span>
+    <a href="#scrollup" class="scrollup" title=""><i class="fas fa-arrow-up"></i></a>
+  </div>
+</footer>

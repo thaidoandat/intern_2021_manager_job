@@ -1,0 +1,56 @@
+<section>
+    <div class="block no-padding">
+      <div class="container fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="main-featured-sec">
+              <div class="new-slide">
+                <%= image_tag Settings.image.background_search %>
+              </div>
+              <div class="job-search-sec">
+                <div class="job-search">
+                  <h3>
+                    <%= t ".intro" %>
+                  </h3>
+                  <span>
+                    <%= t ".small_intro" %>
+                  </span>
+                  <form>
+                    <div class="row">
+                      <div class="col-lg-7 col-md-5 col-sm-12 col-xs-12">
+                        <div class="job-field">
+                          <input type="text" placeholder="Job title, keywords or company name" />
+                          <i class="fas fa-keyboard-o"></i>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                        <div class="job-field">
+                          <select data-placeholder="City, province or region" class="chosen-city">
+                          </select>
+                          <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 col-md-2 col-sm-12 col-xs-12">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="or-browser">
+                    <span>
+                      <%= t ".browse_job_by" %>
+                    </span>
+                    <%= link_to t(".filter") %>
+                  </div>
+                </div>
+              </div>
+              <div class="scroll-to">
+                <%= link_to "#scroll-here" do %>
+                  <i class="fas fa-arrow-down"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
