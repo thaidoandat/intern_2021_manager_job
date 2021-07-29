@@ -1,0 +1,83 @@
+accounts:
+  email:
+    length:
+      min: 10
+      max: 50
+    valid_regexp: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  password:
+    length:
+      min: 6
+      max: 50
+users:
+  name:
+    length:
+      min: 6
+      max: 25
+  address:
+    length:
+      min: 6
+      max: 50
+  phone_number:
+    length:
+      min: 9
+      max: 12
+companies:
+  name:
+    length:
+      min: 6
+      max: 50
+  address:
+    length:
+      min: 6
+      max: 50
+  phone_number:
+    length:
+      min: 9
+      max: 12
+  description:
+    length:
+      min: 6
+      max: 1000
+user_infos:
+  objective:
+    length:
+      min: 6
+      max: 1000
+  work_experiences:
+    length:
+      min: 6
+      max: 1000
+  educations:
+    length:
+      min: 6
+      max: 1000
+  skills:
+    length:
+      min: 6
+      max: 1000
+  interests:
+    length:
+      min: 6
+      max: 1000
+jobs:
+  name:
+    length:
+      min: 6
+      max: 50
+  description:
+    length:
+      min: 6
+      max: 1000
+  requirement:
+    length:
+      min: 6
+      max: 1000
+  benefit:
+    length:
+      min: 6
+      max: 1000
+categories:
+  name:
+    length:
+      min: 6
+      max: 50
