@@ -81,3 +81,8 @@ categories:
     length:
       min: 6
       max: 50
+image:
+  logo: "resource/logo.png"
+  app_store: "resource/dw1.png"
+  ch_play: "resource/dw2.png"
+  background_search: "resource/vector-1.png"

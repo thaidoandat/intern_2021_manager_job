@@ -1,0 +1,53 @@
+<header class="stick-top forsticky">
+  <div class="menu-sec">
+    <div class="container">
+      <div class="logo">
+        <%= link_to image_tag(Settings.image.logo), root_path %>
+      </div><!-- End Logo -->
+      <div class="btn-extars">
+        <%= link_to "javascript:void(0)", :class => "post-job-btn" do %>
+          <i class="fas fa-plus"></i>
+          <%= t ".post" %>
+        <% end %>
+        <ul class="account-btns">
+          <li class="signup-popup">
+            <%= link_to "javascript:void(0)" do %>
+              <i class="fas fa-key"></i>
+              <%= t ".signup" %>
+            <% end %>
+          </li>
+          <li class="signin-popup">
+            <%= link_to "javascript:void(0)" do %>
+              <i class="fas fa-key"></i>
+              <%= t ".login" %>
+            <% end %>
+          </li>
+        </ul>
+      </div><!-- End Btn Extras -->
+      <nav>
+        <ul>
+          <li class="menu-item">
+            <%= link_to t(".home") %>
+          </li>
+          <li class="menu-item">
+            <%= link_to t(".about") %>
+          </li>
+          <li class="menu-item">
+            <%= link_to t(".contact") %>
+          </li>
+          <li class="menu-item-has-children">
+            <%= link_to t(".language") %>
+            <ul>
+              <li>
+                <%= link_to t(".english"), locale: :en %>
+              </li>
+              <li>
+                <%= link_to t(".vietnamese"), locale: :vi %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- End Menus -->
+    </div>
+  </div>
+</header>

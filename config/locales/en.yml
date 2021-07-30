@@ -1,3 +1,42 @@
 en:
-  english: "English"
-  vietnamese: "Vietnamese"
+  layouts:
+    header:
+      language: "Language"
+      english: "English"
+      vietnamese: "Vietnamese"
+      home: "Home"
+      about: "About us"
+      contact: "Contact"
+      post: "Post Jobs"
+      signup: "Signup"
+      login: "Login"
+    footer:
+      address: "Collin Street West, Victor 8007, Australia."
+      phone: "+1 246-345-0695"
+      mail: "info@jobhunt.com"
+      provides: "Our Website provides:"
+      security: "Privacy & Security"
+      communications: "Communications"
+      support: "Support"
+      license: "Lending Licenses"
+      find_jobs: "Find Jobs"
+      hn_jobs: "Hanoi Jobs"
+      dn_jobs: "Danang Jobs"
+      hcm_jobs: "TP Hochiminh Jobs"
+      copy_rights: "© 2018 Jobhunt All rights reserved. Design by Creative Layers"
+  static_pages:
+    home:
+      popular_cate: "Popular Categories"
+      recent_job: "Recently Jobs"
+  shared:
+    login:
+      user_login: "User Login"
+      role_asking: "You are Candidate or Employer?"
+      employer: "Employer"
+      candidate: "Candidate"
+  partial:
+    search_basic:
+      intro: "The Easiest Way to Get Your New Job"
+      small_intro: "Find Jobs, Employment & Career Opportunities"
+      browse_job_by: "Browse job offers by"
+      filter: "Filter"

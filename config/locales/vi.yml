@@ -1,3 +1,43 @@
 vi:
-  english: "Tiếng Anh"
-  vietnamese: "Tiếng Việt"
+  layouts:
+    header:
+      language: "Ngôn ngữ"
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
+      home: "Trang chủ"
+      about: "Về chúng tôi"
+      contact: "Liên lạc"
+      post: "Đăng bài"
+      signup: "Đăng ký"
+      login: "Đăng nhập"
+    footer:
+      address: "Collin Street West, Victor 8007, Australia."
+      phone: "+1 246-345-0695"
+      mail: "info@jobhunt.com"
+      provides: "Trang web của chúng tôi:"
+      security: "An toàn và bảo mật"
+      communications: "Cộng đồng"
+      support: "Hỗ trợ"
+      license: "Giấy phép"
+      find_jobs: "Tìm việc"
+      hn_jobs: "Việc làm ở Hà Nội"
+      dn_jobs: "Việc làm ở Đà Nẵng"
+      hcm_jobs: "Việc làm ở TP. HCM"
+      copy_rights: "© 2018 Jobhunt All rights reserved. Thiết kế bởi Creative Layers"
+  static_pages:
+    home:
+      popular_cate: "Danh mục phổ biến"
+      recent_job: "Công việc gần đây"
+  shared:
+    login:
+      user_login: "Đăng nhập"
+      role_asking: "Bạn là người tìm việc hay nhà tuyển dụng?"
+      employer: "Nhà tuyển dụng"
+      candidate: "Người tìm việc"
+  partial:
+    search_basic:
+      intro: "Đây là cách dễ nhất để bạn tìm việc"
+      small_intro: "Tìm việc, cơ hội nghề nghiệp dễ dàng"
+      browse_job_by: "Tìm việc bằng:"
+      filter: "Bộ lọc"
+

@@ -1,0 +1,46 @@
+<div class="theme-layout" id="scrollup">
+
+  <%= render partial: "layouts/header" %>
+
+  <%= render partial: "partial/search_basic" %>
+
+  <section id="scroll-here">
+    <div class="block">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="heading">
+              <h2>
+                <%= t ".popular_cate" %>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scroll-here">
+    <div class="block">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="heading">
+              <h2>
+                <%= t ".recent_job" %>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%= render partial: "layouts/footer" %>
+
+</div>
+
+<!--
+  render partial: "shared/login"
+  render partial: "shared/signup"
+-->
