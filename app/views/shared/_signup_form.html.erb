@@ -1,0 +1,16 @@
+<%= form_for object do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="cfield">
+    <%= f.text_field :email, placeholder: t(".placeholder.email") %>
+  </div>
+  <div class="cfield">
+    <%= f.password_field :password, placeholder: t(".placeholder.password") %>
+  </div>
+  <div class="cfield">
+    <%= f.password_field :password_confirmation, placeholder: t(".placeholder.password_confirmation") %>
+  </div>
+  <div class="cfield">
+    <%= f.select :role, role_options %>
+  </div>
+  <%= f.submit t(".submit_text") %>
+<% end %>
