@@ -1,4 +1,7 @@
 en:
+  controller:
+    provide_info_success: "Provide information successfully"
+    no_permission: "You don't have permission to access!"
   layouts:
     header:
       language: "Language"
@@ -51,6 +54,15 @@ en:
       placeholder:
         email: "Enter your email"
         password: "Enter your password"
+    infor_form:
+      placeholder:
+        name: "Name"
+        address: "Address"
+        phone_number: "Phone number"
+        description: "Description your company"
+        gender: "Gender"
+        birthday: "Birthday"
+      submit_text: "Update"
   partial:
     search_basic:
       intro: "The Easiest Way to Get Your New Job"
@@ -68,6 +80,12 @@ en:
       success: "Your account has been created"
       failure: "Create account fail"
       invalid_role: "Invalid account role"
+  companies:
+    new:
+      necessary_info: "Provide necessary information"
+  users:
+    new:
+      necessary_info: "Provide necessary information"
   sessions:
     new:
       login: "Log in"
