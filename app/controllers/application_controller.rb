@@ -21,4 +21,18 @@ class ApplicationController < ActionController::Base
     store_location
     redirect_to login_path
   end
+
+  def find_job
+    @job = Job.find_by id: params[:job_id]
+    return if @job
+
+    flash[:danger] = t "controller.job_not_found"
+    redirect_to root_path
+  end
+
+  def redirect_register_information account
+    redirect_to new_user_path if account.user?
+
+    redirect_to new_company_path if account.company?
+  end
 end

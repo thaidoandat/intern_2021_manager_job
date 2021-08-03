@@ -24,4 +24,8 @@ class Job < ApplicationRecord
             length: {minimum: Settings.jobs.benefit.length.min,
                      maximum: Settings.jobs.benefit.length.max}
   validates :status, :expire_at, presence: true
+
+  scope :newest, ->{order(created_at: :desc)}
+
+  delegate :email, :name, :address, :phone_number, to: :company, prefix: true
 end

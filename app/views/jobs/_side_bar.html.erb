@@ -1,0 +1,28 @@
+<div class="widget">
+  <div class="tree_widget-sec">
+    <ul>
+      <li>
+        <%= link_to company do %>
+          <i class="fa fa-file-text"></i><%= t ".company_profile" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to company_jobs_path(company) do %>
+          <i class="fa fa-briefcase"></i><%= t "manage_jobs" %>
+        <% end %>
+      </li>
+      <li>
+        <a href="employer_transactions.html" title=""></a>
+        <%= link_to edit_company_path(company) do %>
+          <i class="fa fa-file-text"></i><%= t "edit_profile" %>
+        <% end %>
+      </li>
+      <li>
+        <a href="employer_post_new.html" title=""></a>
+        <%= link_to new_job_path do %>
+          <i class="fa fa-file-text"></i><%= t "post_job" %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
