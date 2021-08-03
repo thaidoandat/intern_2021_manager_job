@@ -69,6 +69,13 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.bullet_logger = true
+    Bullet.raise = true # raise an error if n+1 query occurs
+    Bullet.unused_eager_loading_enable = false
+  end
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

@@ -26,4 +26,6 @@ class Job < ApplicationRecord
   validates :status, :expire_at, presence: true
 
   scope :newest, ->{order(created_at: :desc)}
+
+  delegate :email, :name, :address, :phone_number, to: :company, prefix: true
 end

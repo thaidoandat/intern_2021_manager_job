@@ -1,5 +1,9 @@
 vi:
   controller:
+    job_not_found: "Job not found"
+    applied: "Applied!"
+    profile_updated: "Profile updated"
+    profile_update_failed: "Profile update failed"
     provide_info_success: "Cung cấp thông tin thành công"
     no_permission: "Bạn không có quyền truy cập trang web này!"
   layouts:
@@ -34,6 +38,7 @@ vi:
     home:
       popular_cate: "Danh mục phổ biến"
       recent_job: "Công việc gần đây"
+      lead_employers: "Leading Employers already using job and talent."
   shared:
     login:
       user_login: "Đăng nhập"
@@ -97,10 +102,71 @@ vi:
       failure: "Đăng nhập thất bại"
       not_found: "Không tìm thấy tài khoản"
   jobs:
-    not_found: "Không tim thấy công việc tương ứng"
+    job:
+      applied: "Applied"
+      apply_job: "Apply Job"
+    not_found: "Job not found"
+    index:
+      job_count: "%{num} Jobs & Vacancies"
+    new:
+      post_job: "Post New Job"
+    show:
+      salary: "Monthly Salary : "
+      post_date: "Post Date: "
+      categories: "Job Categories: "
+      description: "Job Description"
+      requirement: "Requirement Knowledge, Skills, Education And Experience"
+      benefit: "Job Benefit"
+      apply: "Apply for job"
+      all_jobs: "View All Jobs"
+      edit: "Edit Job Information"
+    edit:
+      edit_job: "Edit Job"
     create:
-      success: "Công việc đã được tạo"
-      failure: "Tạo công việc thất bại"
+      success: "Job has been created"
+      failure: "Create job fail"
     update:
-      success: "Công việc đã được cập nhật"
-      failure: "Cập nhật công việc thất bại"
+      success: "Job has been updated"
+      failure: "Update job fail"
+    job_form:
+      name: "Job Title"
+      description: "Job Description"
+      salary: "Offered Salary"
+      category: "Job Category"
+      quantity: "Quantity"
+      requirement: "Requirement"
+      benefit: "Benefit"
+      expire_at: "Deadline Date"
+      submit_text: "Create Job"
+      placeholder:
+        name: "Enter Job Title"
+        description: "Describe about job"
+    job:
+      detail: "View Detail"
+    side_bar:
+      profile: "My Profile"
+      manage_jobs: "Manage Jobs"
+      edit_profile: "Edit Profile"
+      post_job: "Post New Job"
+      logout: "Logout"
+    job_filter:
+      date_post: "Date Posted"
+      job_category: "Job Category"
+      salary: "Offered Salary"
+  user_apply_jobs:
+    form_apply:
+      name: "Name:"
+      email: "Email:"
+      phone: "Phone:"
+      gender: "Gender:"
+      birthday: "Birthday:"
+      address: "Address:"
+      objective: "Objective:"
+      work_experiences: "Work experiences:"
+      educations: "Educations:"
+      skills: "Skills:"
+      interests: "Interests:"
+      apply: "Apply"
+    new:
+      check_your_info: "Check your information"
+      will_affect_profile: "Change this information will affect your profile"

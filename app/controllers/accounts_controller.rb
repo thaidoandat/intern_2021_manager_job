@@ -20,12 +20,6 @@ class AccountsController < ApplicationController
 
   private
 
-  def redirect_register_information account
-    redirect_to new_user_path if account.user?
-
-    redirect_to new_company_path if account.company?
-  end
-
   def account_params
     params.require(:account).permit Account::ACCOUNT_PARAMS
   end

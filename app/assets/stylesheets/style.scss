@@ -1460,10 +1460,9 @@ label::after {
     width: 100%;
     display: table;
     border-bottom: 1px solid #e8ecec;
-    padding: 30px 0;
+    padding: 30px;
     background: #ffffff;
     border-left: 2px solid #ffffff;
-    padding-right: 30px;
 }
 .job-title-sec {
     display: table-cell;
@@ -11818,4 +11817,17 @@ header.style4 .account-btns > li a,
 .checkbox.inline {
     display: block;
     margin-bottom: 20px;
+}
+
+h5.job-count {
+    margin-top: 32px;
+}
+
+.submit-container {
+    text-align: center;
+}
+
+input[type="submit"] {
+    margin: 20px auto;
+    padding: 4px 8px;
 }

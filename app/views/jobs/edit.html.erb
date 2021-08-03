@@ -1,0 +1,23 @@
+<% provide :submit_text, t(".submit_text") %>
+
+<section>
+  <div class="block no-padding">
+    <div class="container">
+      <div class="row no-gape">
+        <aside class="col-lg-3 column border-right">
+          <%= render "jobs/side_bar.html.erb", company: @company %>
+        </aside>
+        <div class="col-lg-9 column">
+          <div class="padding-left">
+            <div class="profile-title">
+              <h3><%= t ".edit_job" %></h3>
+            </div>
+            <div class="profile-form-edit">
+              <%= render "jobs/job_form", object: @job %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

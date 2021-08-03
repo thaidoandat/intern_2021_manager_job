@@ -24,6 +24,8 @@ class User < ApplicationRecord
 
   enum gender: GENDER_HASH
 
+  delegate :email, to: :account
+
   def apply job
     jobs << job
   end

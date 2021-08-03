@@ -2,13 +2,23 @@ class SessionsController < ApplicationController
   before_action :find_account_by_email, only: %i(create)
 
   def new
-    redirect_to current_owner if logged_in?
+    return unless logged_in?
+
+    if current_owner
+      redirect_back_or current_owner
+    else
+      redirect_register_information current_account
+    end
   end
 
   def create
     if @account.authenticate params[:session][:password]
       login_account @account
-      redirect_back_or current_owner
+      if current_owner
+        redirect_back_or current_owner
+      else
+        redirect_register_information current_account
+      end
     else
       flash[:danger] = t "sessions.login.failure"
       render :new
