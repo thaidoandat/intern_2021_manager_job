@@ -1,4 +1,7 @@
 vi:
+  controller:
+    provide_info_success: "Cung cấp thông tin thành công"
+    no_permission: "Bạn không có quyền truy cập trang web này!"
   layouts:
     header:
       language: "Ngôn ngữ"
@@ -51,6 +54,15 @@ vi:
       placeholder:
         email: "Nhập email"
         password: "Nhập mật khẩu"
+    infor_form:
+      placeholder:
+        name: "Tên"
+        address: "Địa chỉ"
+        phone_number: "Số điện thoại"
+        description: "Giới thiệu về công ty"
+        gender: "Giới tính"
+        birthday: "Ngày sinh"
+      submit_text: "Cập nhật"
   partial:
     search_basic:
       intro: "Đây là cách dễ nhất để bạn tìm việc"
@@ -68,6 +80,12 @@ vi:
       success: "Tài khoản của bạn đã được tạo"
       failure: "Tạo tài khoản thất bại"
       invalid_role: "role của tài khoản không thỏa mãn"
+  companies:
+    new:
+      necessary_info: "Cung cấp thông tin cần thiết"
+  users:
+    new:
+      necessary_info: "Cung cấp thông tin cần thiết"
   sessions:
     new:
       login: "Đăng nhập"
