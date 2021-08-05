@@ -1,6 +1,7 @@
 en:
   controller:
     job_not_found: "Job not found"
+    company_not_found: "Company not found"
     applied: "Applied!"
     profile_updated: "Profile updated"
     profile_update_failed: "Profile update failed"
@@ -20,6 +21,7 @@ en:
       logout: "Logout"
       profile: "Profile"
       categories: "Job Categories"
+      jobs: "Jobs"
     footer:
       address: "Collin Street West, Victor 8007, Australia."
       phone: "+1 246-345-0695"
@@ -88,6 +90,28 @@ en:
   companies:
     new:
       necessary_info: "Provide necessary information"
+    company_jobs:
+      about: "About Bussiness Network"
+      jobs: "Jobs from Business Network"
+    show:
+      profile: "Company Profile"
+      information: "Company Information"
+      name: "Name"
+      posted_jobs: "Posted jobs"
+      location: "Location"
+      since: "Since"
+      phone_number: "Phone number"
+      edit_profile: "Edit Profile"
+    edit:
+      update_profile: "Update Profile"
+      can_change: "You can change your information here"
+    edit_company_form:
+      name: "Name"
+      email: "Email"
+      phone: "Phone number"
+      address: "Address"
+      description: "Description"
+      update: "Update"
   users:
     new:
       necessary_info: "Provide necessary information"
@@ -105,6 +129,7 @@ en:
     job:
       applied: "Applied"
       apply_job: "Apply Job"
+      view: "View"
     not_found: "Job not found"
     index:
       job_count: "%{num} Jobs & Vacancies"
@@ -172,3 +197,10 @@ en:
     new:
       check_your_info: "Check your information"
       will_affect_profile: "Change this information will affect your profile"
+  views:
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"
