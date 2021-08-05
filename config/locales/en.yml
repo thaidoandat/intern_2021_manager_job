@@ -1,5 +1,9 @@
 en:
   controller:
+    job_not_found: "Job not found"
+    applied: "Applied!"
+    profile_updated: "Profile updated"
+    profile_update_failed: "Profile update failed"
     provide_info_success: "Provide information successfully"
     no_permission: "You don't have permission to access!"
   layouts:
@@ -34,6 +38,7 @@ en:
     home:
       popular_cate: "Popular Categories"
       recent_job: "Recently Jobs"
+      lead_employers: "Leading Employers already using job and talent."
   shared:
     login:
       user_login: "User Login"
@@ -97,6 +102,9 @@ en:
       failure: "Log in fail"
       not_found: "Account not found"
   jobs:
+    job:
+      applied: "Applied"
+      apply_job: "Apply Job"
     not_found: "Job not found"
     create:
       success: "Job has been created"
@@ -104,3 +112,20 @@ en:
     update:
       success: "Job has been updated"
       failure: "Update job fail"
+  user_apply_jobs:
+    form_apply:
+      name: "Name:"
+      email: "Email:"
+      phone: "Phone:"
+      gender: "Gender:"
+      birthday: "Birthday:"
+      address: "Address:"
+      objective: "Objective:"
+      work_experiences: "Work experiences:"
+      educations: "Educations:"
+      skills: "Skills:"
+      interests: "Interests:"
+      apply: "Apply"
+    new:
+      check_your_info: "Check your information"
+      will_affect_profile: "Change this information will affect your profile"

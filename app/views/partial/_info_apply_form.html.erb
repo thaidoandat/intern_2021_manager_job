@@ -1,0 +1,46 @@
+<%= form.fields_for field do |ff| %>
+  <div class="col-lg-11">
+    <div class="pf-title">
+      <%= t ".objective" %>
+    </div>
+    <div class="pf-field">
+      <%= ff.text_field :objective %>
+    </div>
+  </div>
+
+  <div class="col-lg-11">
+    <div class="pf-title">
+      <%= t ".work_experiences" %>
+    </div>
+    <div class="pf-field">
+      <%= ff.text_field :work_experiences %>
+    </div>
+  </div>
+
+  <div class="col-lg-11">
+    <div class="pf-title">
+      <%= t ".educations" %>
+    </div>
+    <div class="pf-field">
+      <%= ff.text_field :educations %>
+    </div>
+  </div>
+
+  <div class="col-lg-11">
+    <div class="pf-title">
+      <%= t ".skills" %>
+    </div>
+    <div class="pf-field">
+      <%= ff.text_field :skills %>
+    </div>
+  </div>
+
+  <div class="col-lg-11">
+    <div class="pf-title">
+      <%= t ".interests" %>
+    </div>
+    <div class="pf-field">
+      <%= ff.text_field :interests %>
+    </div>
+  </div>
+<% end %>

@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :user_apply_jobs, dependent: :destroy
   has_many :jobs, through: :user_apply_jobs
 
+  accepts_nested_attributes_for :user_info
+
   validates :account_id, presence: true
   validates :name, presence: true, uniqueness: {case_sensitive: false},
             length: {minimum: Settings.companies.name.length.min,
@@ -21,4 +23,12 @@ class User < ApplicationRecord
   validates :birthday, presence: true
 
   enum gender: GENDER_HASH
+
+  def apply job
+    jobs << job
+  end
+
+  def apply? job_id
+    jobs.find_by id: job_id
+  end
 end
