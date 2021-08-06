@@ -11,10 +11,10 @@
         <ul class="account-btns">
           <% if logged_in? %>
             <li class="signup-popup">
-              <%= link_to t(".profile"), current_owner %>
+              <%= link_to t(".profile"), profile_link %>
             </li>
             <li class="signup-popup">
-              <%= link_to t(".logout"), logout_path, method: :delete %>
+              <%= button_to t(".logout"), logout_path, method: :delete %>
             </li>
           <% else %>
             <li class="signup-popup">

@@ -1,0 +1,49 @@
+<section>
+  <div class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 column">
+          <div class="job-single-sec">
+            <div class="job-single-head2">
+              <div class="job-title2"><h3><%= @job.name %></h3><i class="fa fa-heart-o"></i></div>
+              <ul class="tags-jobs">
+                <li><i class="fa fa-map-marker"></i> <%= @job.company_address %></li>
+                <li><i class="fa fa-money"></i> <%= t ".salary" %><span><%= @job.salary %></span></li>
+                <li><i class="fa fa-calendar-o"></i> <%= t ".post_date" %><%= @job.updated_at.strftime Settings.date_format %></li>
+              </ul>
+              <span><strong><%= t ".categories" %></strong><%= render_job_categories(@job) %></span>
+            </div><!-- Job Head -->
+            <div class="job-details">
+              <h3><%= t ".description" %></h3>
+              <p><%= @job.description %></p>
+              <h3><%= t ".requirement" %></h3>
+              <p><%= @job.requirement %></p>
+              <h3><%= t ".benefit" %></h3>
+              <p><%= @job.benefit %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 column">
+          <div class="job-single-head style2">
+            <div class="job-head-info">
+              <h4><%= @job.company_name %></h4>
+              <span><%= @job.company_address %></span>
+              <p><i class="fa fa-phone"></i><%= @job.company_phone_number %></p>
+              <p><i class="fa fa-envelope-o"></i> <%= @job.company_email %></p>
+            </div>
+            <% if current_account&.company? %>
+              <%= link_to edit_job_path(@job), class: "apply-job-btn" do %>
+                <i class="fa fa-paper-plane"></i><%= t ".edit" %>
+              <% end %>
+            <% else %>
+              <%= link_to apply_form_job_path(@job), class: "apply-job-btn" do %>
+                <i class="fa fa-paper-plane"></i><%= t ".apply" %>
+              <% end %>
+            <% end %>
+            <%= link_to t(".all_jobs"), jobs_path, class: "viewall-jobs" %>
+          </div><!-- Job Head -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

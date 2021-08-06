@@ -106,12 +106,55 @@ en:
       applied: "Applied"
       apply_job: "Apply Job"
     not_found: "Job not found"
+    index:
+      job_count: "%{num} Jobs & Vacancies"
+    new:
+      post_job: "Post New Job"
+      submit_text: "Create Job"
+    show:
+      salary: "Monthly Salary : "
+      post_date: "Post Date: "
+      categories: "Job Categories: "
+      description: "Job Description"
+      requirement: "Requirement Knowledge, Skills, Education And Experience"
+      benefit: "Job Benefit"
+      apply: "Apply for job"
+      all_jobs: "View All Jobs"
+      edit: "Edit Job Information"
+    edit:
+      edit_job: "Edit Job"
+      submit_text: "Update Job"
     create:
       success: "Job has been created"
       failure: "Create job fail"
     update:
       success: "Job has been updated"
       failure: "Update job fail"
+    job_form:
+      name: "Job Title"
+      description: "Job Description"
+      salary: "Offered Salary"
+      category: "Job Category"
+      quantity: "Quantity"
+      requirement: "Requirement"
+      benefit: "Benefit"
+      expire_at: "Deadline Date"
+      submit_text: "Create Job"
+      placeholder:
+        name: "Enter Job Title"
+        description: "Describe about job"
+    job:
+      detail: "View Detail"
+    side_bar:
+      profile: "My Profile"
+      manage_jobs: "Manage Jobs"
+      edit_profile: "Edit Profile"
+      post_job: "Post New Job"
+      logout: "Logout"
+    job_filter:
+      date_post: "Date Posted"
+      job_category: "Job Category"
+      salary: "Offered Salary"
   user_apply_jobs:
     form_apply:
       name: "Name:"

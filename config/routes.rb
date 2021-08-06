@@ -9,11 +9,13 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :jobs
-
     resources :jobs do
       member do
         get "/apply_form", to: "user_apply_jobs#new", as: "apply_form"
       end
+    end
+    resources :companies do
+      resources :jobs, only: %i(index show)
     end
   end
 end

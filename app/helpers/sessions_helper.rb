@@ -25,8 +25,6 @@ module SessionsHelper
       current_account.user
     elsif current_account.company? && current_account.company
       current_account.company
-    else
-      root_path
     end
   end
 

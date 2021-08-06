@@ -1,0 +1,23 @@
+<div class="widget border">
+  <h3 class="sb-title open"><%= t ".date_post" %></h3>
+  <div class="posted_widget">
+  </div>
+</div>
+<div class="widget border">
+  <h3 class="sb-title open"><%= t ".job_category" %></h3>
+  <div class="type_widget">
+    <% Category.all.each do |item| %>
+      <p class="flchek">
+        <%= check_box_tag item.id %>
+        <%= label_tag item.id, item.name %>
+      </p>
+    <% end %>
+  </div>
+</div>
+<div class="widget border">
+  <h3 class="sb-title closed"><%= t ".salary" %></h3>
+  <div class="specialism_widget">
+    <div class="simple-checkbox">
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class UserApplyJobsController < ApplicationController
-  before_action :log_in_require, :get_user_info
+  before_action :log_in_require, :check_role_user, :get_user_info
   before_action :find_job, only: %i(create)
 
   def new; end
@@ -16,8 +16,14 @@ class UserApplyJobsController < ApplicationController
   end
 
   private
+  def check_role_user
+    return if current_account.user?
+
+    redirect_to root_path
+  end
+
   def get_user_info
-    @user = User.find_by account_id: session[:account_id]
+    @user = current_account.user
     return root_path unless @user
 
     @user_info = UserInfo.find_by user_id: @user.id

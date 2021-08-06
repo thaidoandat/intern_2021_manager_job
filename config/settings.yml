@@ -76,6 +76,7 @@ jobs:
     length:
       min: 6
       max: 1000
+  max_items_per_page: 10
 categories:
   name:
     length:
@@ -88,3 +89,8 @@ image:
   background_search: "resource/vector-1.png"
   company_logo: "resource/l1.png"
   user_avatar: "resource/es1.jpg"
+date_format: "%d-%m-%Y"
+number_field:
+  min: 0
+  step: 1
+  default_value: 0
