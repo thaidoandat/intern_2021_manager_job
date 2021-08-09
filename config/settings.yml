@@ -38,6 +38,8 @@ companies:
     length:
       min: 6
       max: 1000
+  page:
+    max: 5
 user_infos:
   objective:
     length:
@@ -89,6 +91,7 @@ image:
   background_search: "resource/vector-1.png"
   company_logo: "resource/l1.png"
   user_avatar: "resource/es1.jpg"
+  company_avatar: "resource/logo_company.png"
 date_format: "%d-%m-%Y"
 number_field:
   min: 0
