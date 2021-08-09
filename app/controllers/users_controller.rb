@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_role_user, only: %i(new create)
-  before_action :find_user, :correct_user, only: %i(show edit update)
+  before_action :find_user, only: %i(show edit update)
+  before_action :correct_user, only: %i(edit update)
 
   def new
     @user = current_account.build_user

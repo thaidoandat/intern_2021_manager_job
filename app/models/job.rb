@@ -28,4 +28,10 @@ class Job < ApplicationRecord
   scope :newest, ->{order(created_at: :asc)}
 
   delegate :email, :name, :address, :phone_number, to: :company, prefix: true
+
+  def save_job_categories categories
+    categories.each do |key, value|
+      JobCategory.create(job_id: id, category_id: key) if value == "1"
+    end
+  end
 end

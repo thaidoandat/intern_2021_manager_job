@@ -1,0 +1,11 @@
+<div class="job-listing wtabs">
+  <div class="job-title-sec">
+    <h3><%= company.name %></h3>
+    <div class="job-lctn"><i class="fa fa-map-marker"></i><%= company.address %></div>
+  </div>
+  <div class="job-style-bx">
+    <button class="btn btn-info">
+      <%= link_to t(".detail"), company_path(company) %>
+    </button>
+  </div>
+</div>

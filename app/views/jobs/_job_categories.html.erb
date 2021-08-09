@@ -1,0 +1,6 @@
+<% collection.each do |item| %>
+  <div class="job-category-item">
+    <%= check_box_tag "#{field}[#{item.id}]" %>
+    <%= label_tag "#{field}[#{item.id}]", item.name.capitalize %>
+  </div>
+<% end %>

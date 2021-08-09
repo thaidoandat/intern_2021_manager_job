@@ -7,6 +7,7 @@ vi:
     profile_updated: "Trang cá nhân đã đươc cập nhật"
     profile_update_failed: "Cập nhật trang cá nhân thất bại"
     provide_info_success: "Cung cấp thông tin thành công"
+    provide_info_fail: "Provide information failed"
     no_permission: "Bạn không có quyền truy cập trang web này!"
   layouts:
     header:
@@ -39,7 +40,7 @@ vi:
       copy_rights: "© 2018 Jobhunt All rights reserved. Thiết kế bởi Creative Layers"
   static_pages:
     home:
-      popular_cate: "Danh mục phổ biến"
+      company_list: "Danh sách công ty"
       recent_job: "Công việc gần đây"
       lead_employers: "Leading Employers already using job and talent."
   shared:
@@ -115,6 +116,7 @@ vi:
       since: "Bắt đầu từ năm"
       phone_number: "Số điện thoại"
       edit_profile: "Chỉnh sửa"
+      create_new_job: "Create New Job"
     edit:
       update_profile: "Cập nhật trang công ty"
       can_change: "Bạn có thể chỉnh sửa thông tin công ty tại đây"
@@ -125,6 +127,8 @@ vi:
       address: "Địa chỉ"
       description: "Giới thiệu công ty"
       update: "Cập nhật"
+    company:
+      detail: "View detail"
   users:
     edit:
       check_your_info: "Kiểm tra thông tin của bạn"
@@ -141,6 +145,8 @@ vi:
       interests: "Sở thích:"
       applied_job: "Việc làm đã ứng tuyển"
       edit_btn: "Thay đổi"
+    user:
+      view_profile: "View Profile"
   sessions:
     new:
       login: "Đăng nhập"
@@ -170,6 +176,7 @@ vi:
       apply: "Apply for job"
       all_jobs: "View All Jobs"
       edit: "Edit Job Information"
+      all_candidates: "All Candidates"
     edit:
       edit_job: "Edit Job"
       applied: "Đã ứng tuyển"
@@ -182,6 +189,31 @@ vi:
     update:
       success: "Công việc đã được cập nhật"
       failure: "Cập nhật công việc thất bại"
+    job_form:
+      name: "Job Title"
+      description: "Job Description"
+      salary: "Offered Salary"
+      category: "Job Category"
+      quantity: "Quantity"
+      requirement: "Requirement"
+      benefit: "Benefit"
+      expire_at: "Deadline Date"
+      submit_text: "Create Job"
+      placeholder:
+        name: "Enter Job Title"
+        description: "Describe about job"
+    job:
+      detail: "View Detail"
+    side_bar:
+      profile: "My Profile"
+      manage_jobs: "Manage Jobs"
+      edit_profile: "Edit Profile"
+      post_job: "Post New Job"
+      logout: "Logout"
+    job_filter:
+      date_post: "Date Posted"
+      job_category: "Job Category"
+      salary: "Offered Salary"
   user_apply_jobs:
     form_apply:
       name: "Tên:"
@@ -199,6 +231,27 @@ vi:
     new:
       check_your_info: "Kiểm tra thông tin của bạn"
       will_affect_profile: "Thay đổi thông tin sẽ ảnh hưởng trực tiếp tới hồ sơ của bạn"
+    show:
+      list_candidates: "List Candidates"
+    user_apply_job:
+      accept: "Accept"
+      accepted: "Accepted"
+      decline: "Decline"
+  process_candidates:
+    apply_not_found: "Apply not found"
+    update:
+      success: "Accepted"
+      fail: "Accept failure"
+    destroy:
+      success: "Decline success"
+      fail: "Decline fail"
+  views:
+    pagination:
+      first: "« ĐẦU"
+      last: "CUỐI »"
+      previous: "‹ TRƯỚC"
+      next: "SAU ›"
+      truncate: "…"
   mailers:
     account_mailer:
       subject_email: "Xác thực tài khoản"
@@ -240,3 +293,5 @@ vi:
         email: "Email"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
+      check_your_info: "Check your information"
+      will_affect_profile: "Change this information will affect your profile"

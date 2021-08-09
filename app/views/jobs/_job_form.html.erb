@@ -29,6 +29,12 @@
       </div>
     </div>
     <div class="col-lg-12">
+      <span class="pf-title"><%= t ".categories" %></span>
+      <div class="pf-field">
+        <%= render "jobs/job_categories", collection: @categories, field: "job[job_categories]", form: f %>
+      </div>
+    </div>
+    <div class="col-lg-12">
       <span class="pf-title"><%= t ".requirement" %></span>
       <div class="pf-field">
         <%= f.text_area :requirement %>

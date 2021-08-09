@@ -3,5 +3,6 @@ class StaticPagesController < ApplicationController
 
   def home
     @jobs = Job.newest.includes(:company)
+    @companies = Company.all
   end
 end

@@ -40,7 +40,7 @@ en:
       copy_rights: "© 2018 Jobhunt All rights reserved. Design by Creative Layers"
   static_pages:
     home:
-      popular_cate: "Popular Categories"
+      company_list: "Company list"
       recent_job: "Recently Jobs"
       lead_employers: "Leading Employers already using job and talent."
   shared:
@@ -83,6 +83,7 @@ en:
       gender: "Gender"
       birthday: "Birthday"
       address: "Address"
+      update: "Update"
     search_basic:
       intro: "The Easiest Way to Get Your New Job"
       small_intro: "Find Jobs, Employment & Career Opportunities"
@@ -115,6 +116,7 @@ en:
       since: "Since"
       phone_number: "Phone number"
       edit_profile: "Edit Profile"
+      create_new_job: "Create New Job"
     edit:
       update_profile: "Update Profile"
       can_change: "You can change your information here"
@@ -125,6 +127,8 @@ en:
       address: "Address"
       description: "Description"
       update: "Update"
+    company:
+      detail: "View detail"
   users:
     edit:
       check_your_info: "Check your information"
@@ -141,6 +145,13 @@ en:
       interests: "Interests:"
       applied_job: "Applied Jobs"
       edit_btn: "Edit"
+      email: "Email: "
+      phone: "Phone: "
+      gender: "Gender: "
+      address: "Address: "
+      birthday: "Birthday: "
+    user:
+      view_profile: "View Profile"
   sessions:
     new:
       login: "Log in"
@@ -173,6 +184,7 @@ en:
       apply: "Apply for job"
       all_jobs: "View All Jobs"
       edit: "Edit Job Information"
+      all_candidates: "All Candidates"
     edit:
       edit_job: "Edit Job"
       submit_text: "Update Job"
@@ -224,6 +236,20 @@ en:
     new:
       check_your_info: "Check your information"
       will_affect_profile: "Change this information will affect your profile"
+    show:
+      list_candidates: "List Candidates"
+    user_apply_job:
+      accept: "Accept"
+      accepted: "Accepted"
+      decline: "Decline"
+  process_candidates:
+    apply_not_found: "Apply not found"
+    update:
+      success: "Accepted"
+      fail: "Accept failure"
+    destroy:
+      success: "Decline success"
+      fail: "Decline fail"
   views:
     pagination:
       first: "« FIRST"
@@ -271,3 +297,5 @@ en:
         email: "Email"
         password: "Password"
         password_confirmation: "Confirm password"
+      check_your_info: "Check your information"
+      will_affect_profile: "Change this information will affect your profile"

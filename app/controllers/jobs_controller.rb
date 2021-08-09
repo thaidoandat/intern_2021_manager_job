@@ -10,11 +10,12 @@ class JobsController < ApplicationController
 
   def new
     @job = @company.jobs.build
+    @categories = Category.all
   end
 
   def create
     @job = @company.jobs.build job_params
-    if @job.save
+    if @job.save && @job.save_job_categories(params[:job][:job_categories])
       flash[:success] = t "jobs.create.success"
       redirect_to @job
     else

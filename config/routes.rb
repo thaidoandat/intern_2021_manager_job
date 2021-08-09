@@ -19,5 +19,7 @@ Rails.application.routes.draw do
     resources :companies do
       resources :jobs, only: %i(index show)
     end
+    resources :user_apply_jobs, only: %i(show)
+    resources :process_candidates, only: %i(update destroy)
   end
 end
