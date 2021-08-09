@@ -35,6 +35,12 @@
               <%= link_to edit_job_path(@job), class: "apply-job-btn" do %>
                 <i class="fa fa-paper-plane"></i><%= t ".edit" %>
               <% end %>
+            <% end %>
+            <% if @current_account&.user&.apply? @job.id %>
+              <%= link_to "#", class: "apply-job-btn" do %>
+                <i class="fa fa-paper-plane"></i>
+                <%= t ".applied" %>
+              <% end %>
             <% else %>
               <%= link_to apply_form_job_path(@job), class: "apply-job-btn" do %>
                 <i class="fa fa-paper-plane"></i><%= t ".apply" %>

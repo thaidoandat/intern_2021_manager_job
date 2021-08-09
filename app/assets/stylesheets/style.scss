@@ -4364,7 +4364,8 @@ footer.style3 span, footer.style3 a {
     width: 100%;
     height: 100%;
     content: "";
-    background-image: url('../images/lines.png');
+    background-image: url(image_path("resource/b1.jpg"));
+
     z-index: 0;
     opacity: 0.14;
 }
@@ -4372,7 +4373,7 @@ footer.style3 span, footer.style3 a {
     float: left;
     width: 100%;
     position: relative;
-    padding-top: 240px; padding-bottom: 15px;
+    padding-top: 70px;
     z-index: 0;
 }
 .inner-header.wform .job-search-sec {
@@ -4568,7 +4569,7 @@ section.overlape {
     font-size: 30px;
     text-align: center;
     margin: 0;
-    margin-bottom: 50px;
+    margin-bottom: 90px;
 }
 .search_widget_job {
     float: left;
@@ -5765,25 +5766,18 @@ aside .widget.border:first-child {
     margin-bottom: 4px;
 }
 .job-single-info3 > span {
-    float: left;
     font-size: 13px;
     color: #888888;
-    margin: 7px 0;
+    margin: 20px 0;
 }
 .job-single-info3 > span i {
-    float: left;
     font-size: 23px;
-    float: left;
     line-height: 15px;
     margin-right: 8px;
     color: #8b91dd;
+    margin-top: 15px;
 }
-.job-single-info3 .job-is {
-    margin: 0;
-        margin-left: 0px;
-    margin-left: 20px;
-    font-size: 12px;
-}
+
 .job-single-info3 .tags-jobs {
     margin-top: 16px;
 }
@@ -6366,7 +6360,7 @@ aside .widget.border:first-child {
     padding: 11px 0;
     margin-top: 10px;
 }
-.emply-btns > a.followus {
+.emply-btns > a.edit-profile {
     background-color: #ffffff;
     border-color: #8b91dd;
     color: #8b91dd;
@@ -11815,19 +11809,67 @@ header.style4 .account-btns > li a,
 }
 
 .checkbox.inline {
-    display: block;
-    margin-bottom: 20px;
+  display: block;
+  margin-bottom: 20px;
 }
 
 h5.job-count {
-    margin-top: 32px;
+  margin-top: 32px;
 }
 
 .submit-container {
-    text-align: center;
+  text-align: center;
 }
 
 input[type="submit"] {
-    margin: 20px auto;
-    padding: 4px 8px;
+  margin: 20px auto;
+  padding: 4px 8px;
+}
+
+.description {
+  font-weight: 200;
+  font-size: 14px;
+  color: #888888;
+  margin-bottom: 50px;
+  line-height: 20px;
+  font-style: italic;
+}
+
+.job-is.fl {
+  cursor: pointer;
+}
+
+.check-info {
+  padding: 40px 0px;
+}
+
+.ava-profile {
+  img {
+    width: 300px;
+  }
+
+  height: 350px;
+}
+
+.row-profile {
+  margin: -30px -20px;
+}
+
+.pf-title {
+  font-size: 15px;
+}
+
+.pf-field {
+  textarea {
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  input, textarea {
+    font-size: 15px;
+  }
+}
+
+.update {
+    margin-top: 40px;
 }

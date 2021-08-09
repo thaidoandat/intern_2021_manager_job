@@ -24,6 +24,8 @@ class User < ApplicationRecord
 
   enum gender: GENDER_HASH
 
+  delegate :objective, :work_experiences, :educations, :skills,
+           :interests, to: :user_info
   delegate :email, to: :account
 
   def apply job
@@ -32,5 +34,16 @@ class User < ApplicationRecord
 
   def apply? job_id
     jobs.find_by id: job_id
+  end
+
+  def save_user_info user_info_params
+    ActiveRecord::Base.transaction do
+      save!
+      @user_info = build_user_info user_info_params
+      @user_info.save!
+      true
+    rescue ActiveRecord::RecordInvalid
+      false
+    end
   end
 end

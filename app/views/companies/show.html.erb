@@ -1,0 +1,75 @@
+<div class="theme-layout" id="scrollup">
+  <section class="overlape">
+    <div class="block no-padding">
+      <div class="container fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="inner-header">
+              <h3><%= t ".profile" %></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="block">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 column">
+            <div class="job-single-sec style3">
+              <div class="job-head-wide">
+                <div class="row">
+                  <div class="col-lg-10">
+                    <div class="job-single-head3 emplye">
+                      <div class="job-thumb">
+                        <%= image_tag Settings.image.company_avatar %>
+                      </div>
+                      <div class="job-single-info3">
+                        <h3><%= @company.name %></h3>
+                        <span><i class="fa fa-map-marker"></i><%= @company.address %></span>
+                        <br>
+                        <span><i class="fa fa-phone"></i><%= @company.phone_number %></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="emply-btns">
+                      <%= link_to t(".edit_profile"), edit_company_path, class: "edit-profile" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job-wide-devider">
+                <div class="row">
+                  <div class="col-lg-8 column">
+                    <div class="job-details">
+                      <h3><%= t ".about" %></h3>
+                      <div class="description">
+                        <%= @company.description %>
+                      </div>
+                    </div>
+                    <%= render @jobs %>
+                    <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+                  </div>
+                  <div class="col-lg-4 column">
+                    <div class="job-overview">
+                      <h3><%= t ".information" %></h3>
+                      <ul>
+                        <li><i class="fa fa-building"></i><h3><%= t ".name" %></h3><span><%= @company.name %></span></li>
+                        <li><i class="fa fa-file-text"></i><h3><%= t ".posted_jobs" %></h3><span>2</span></li>
+                        <li><i class="fa fa-map"></i><h3><%= t ".location" %></h3><span><%= @company.address %></span></li>
+                        <li><i class="fa fa-clock-o"></i><h3><%= t ".since" %></h3><span><%= @company.created_at.year %></span></li>
+                        <li><i class="fa fa-phone"></i><h3><%= t ".phone_number" %></h3><span><%= @company.phone_number %></span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

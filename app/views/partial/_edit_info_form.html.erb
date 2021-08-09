@@ -1,5 +1,5 @@
-<%= form_for @user, method: :post, url: user_apply_jobs_path do |f| %>
-  <%= hidden_field_tag :job_id, params[:id] %>
+<%= form_for @user do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
   <div class="row">
     <div class="col-lg-4">
       <div class="ava-profile">
@@ -72,9 +72,7 @@
     <%= render "partial/info_apply_form", field: :user_info, form: f %>
 
     <div class="col-lg-12">
-      <button type="submit">
-        <%= t ".apply" %>
-      </button>
+      <%= f.submit yield(:button_text) %>
     </div>
   </div>
 <% end %>

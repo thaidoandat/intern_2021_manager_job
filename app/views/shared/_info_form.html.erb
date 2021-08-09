@@ -18,8 +18,19 @@
       <%= f.select :gender, gender_options %>
     </div>
     <div class="cfield">
-      <%= f.date_select :birthday, placeholder: t(".placeholder.birthday") %>
+      <%= f.date_field :birthday, placeholder: t(".placeholder.birthday") %>
     </div>
+    <section>
+      <div class="block">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <%= render "partial/info_apply_form", field: :user_info, form: f %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   <% end %>
   <%= f.submit t(".submit_text") %>
 <% end %>

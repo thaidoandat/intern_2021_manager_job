@@ -1,9 +1,11 @@
 vi:
   controller:
-    job_not_found: "Job not found"
-    applied: "Applied!"
-    profile_updated: "Profile updated"
-    profile_update_failed: "Profile update failed"
+    job_not_found: "Công việc bạn đang tìm kiếm không tồn tại"
+    user_not_found: "Không tìm thấy người dùng!"
+    company_not_found: "Không tìm thấy công ty"
+    applied: "Ứng tuyển thành công!"
+    profile_updated: "Trang cá nhân đã đươc cập nhật"
+    profile_update_failed: "Cập nhật trang cá nhân thất bại"
     provide_info_success: "Cung cấp thông tin thành công"
     no_permission: "Bạn không có quyền truy cập trang web này!"
   layouts:
@@ -12,14 +14,15 @@ vi:
       english: "Tiếng Anh"
       vietnamese: "Tiếng Việt"
       home: "Trang chủ"
-      about: "Về chúng tôi"
+      about: "Tìm hiểu"
       contact: "Liên lạc"
       post: "Đăng bài"
       signup: "Đăng ký"
       login: "Đăng nhập"
       logout: "Đăng xuất"
       profile: "Hồ Sơ"
-      categories: "Danh mục công việc"
+      categories: "Danh mục"
+      jobs: "Công việc"
     footer:
       address: "Collin Street West, Victor 8007, Australia."
       phone: "+1 246-345-0695"
@@ -69,6 +72,14 @@ vi:
         birthday: "Ngày sinh"
       submit_text: "Cập nhật"
   partial:
+    edit_info_form:
+      name: "Tên"
+      email: "Email"
+      phone: "SĐT"
+      gender: "Giới tính"
+      birthday: "Ngày sinh"
+      address: "Địa chỉ"
+      update: "Cập nhật"
     search_basic:
       intro: "Đây là cách dễ nhất để bạn tìm việc"
       small_intro: "Tìm việc, cơ hội nghề nghiệp dễ dàng"
@@ -88,9 +99,44 @@ vi:
   companies:
     new:
       necessary_info: "Cung cấp thông tin cần thiết"
+    company_jobs:
+      about: "Giới thiệu về công ty"
+      jobs: "Các công việc ứng tuyển"
+    show:
+      profile: "Trang thông tin công ty"
+      information: "Thông tin công ty"
+      name: "Tên"
+      posted_jobs: "Các công việc đã đăng"
+      location: "Địa chỉ"
+      since: "Bắt đầu từ năm"
+      phone_number: "Số điện thoại"
+      edit_profile: "Chỉnh sửa"
+    edit:
+      update_profile: "Cập nhật trang công ty"
+      can_change: "Bạn có thể chỉnh sửa thông tin công ty tại đây"
+    edit_company_form:
+      name: "Tên"
+      email: "Email"
+      phone: "Số điện thoại"
+      address: "Địa chỉ"
+      description: "Giới thiệu công ty"
+      update: "Cập nhật"
   users:
+    edit:
+      check_your_info: "Kiểm tra thông tin của bạn"
+      will_affect_profile: "Thay đổi ở đây sẽ ảnh hưởng hồ sơ của bạn"
+      update: "Cập nhật"
     new:
       necessary_info: "Cung cấp thông tin cần thiết"
+    show:
+      profile: "Hồ sơ cá nhân"
+      objective: "Mục tiêu:"
+      work_experiences: "Kinh nghiệm làm việc:"
+      educations: "Bằng cấp:"
+      skills: "Kĩ năng:"
+      interests: "Sở thích:"
+      applied_job: "Việc làm đã ứng tuyển"
+      edit_btn: "Thay đổi"
   sessions:
     new:
       login: "Đăng nhập"
@@ -122,6 +168,10 @@ vi:
       edit: "Edit Job Information"
     edit:
       edit_job: "Edit Job"
+      applied: "Đã ứng tuyển"
+      apply_job: "Ứng tuyển"
+      view: "Xem"
+    not_found: "Không tim thấy công việc tương ứng"
     create:
       success: "Job has been created"
       failure: "Create job fail"
@@ -170,3 +220,10 @@ vi:
     new:
       check_your_info: "Check your information"
       will_affect_profile: "Change this information will affect your profile"
+  views:
+    pagination:
+      first: "« ĐẦU"
+      last: "CUỐI »"
+      previous: "‹ TRƯỚC"
+      next: "SAU ›"
+      truncate: "…"
