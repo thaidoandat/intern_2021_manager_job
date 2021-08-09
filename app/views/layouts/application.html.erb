@@ -8,8 +8,13 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
   </head>
   <body>
+    <%= render partial: "layouts/header" %>
     <div class="theme-layout" id="scrollup">
-      <%= render partial: "layouts/header" %>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>">
+          <%= message %>
+        </div>
+      <% end %>
       <%= yield %>
       <%= render partial: "layouts/footer" %>
       <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>

@@ -4,6 +4,7 @@ accounts:
       min: 10
       max: 50
     valid_regexp: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+    expired_hours: 2
   password:
     length:
       min: 6

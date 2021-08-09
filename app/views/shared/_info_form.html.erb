@@ -10,15 +10,17 @@
     <%= f.text_field :phone_number, placeholder: t(".placeholder.phone_number") %>
   </div>
   <% if current_account.company? %>
-    <div class="cfield">
-      <%= f.text_area :description, placeholder: t(".placeholder.description") %>
+    <div>
+      <%= f.text_area :description, placeholder: t(".placeholder.description"), class:"des" %>
     </div>
   <% elsif current_account.user? %>
-    <div class="cfield">
-      <%= f.select :gender, gender_options %>
+    <div class="select">
+      <%= t ".gender" %>
+      <span class="select-1"><%= f.select :gender, gender_options %><span>
     </div>
-    <div class="cfield">
-      <%= f.date_field :birthday, placeholder: t(".placeholder.birthday") %>
+    <div class="select">
+      <%= t ".birthday" %>
+      <span class="select-2"><%= f.date_field :birthday %><span>
     </div>
     <section>
       <div class="block">
@@ -32,5 +34,5 @@
       </div>
     </section>
   <% end %>
-  <%= f.submit t(".submit_text") %>
+  <%= f.submit t(".submit_text"), class:"btn btn-primary"%>
 <% end %>

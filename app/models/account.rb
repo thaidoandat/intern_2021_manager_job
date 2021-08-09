@@ -1,11 +1,14 @@
 class Account < ApplicationRecord
+  attr_accessor :activation_token, :remember_token, :reset_token
+  before_save :downcase_email
+  before_create :create_activation_digest
+
   ACCOUNT_PARAMS = %i(email password password_confirmation role).freeze
+  PASSWORD_PARAMS = %i(password password_confirmation).freeze
   ROLES_HASH = {user: 0, company: 1, admin: 2}.freeze
 
   has_one :user, dependent: :destroy
   has_one :company, dependent: :destroy
-
-  before_save :downcase_email
 
   validates :email, presence: true, uniqueness: {case_sensitive: false},
             length: {minimum: Settings.accounts.email.length.min,
@@ -20,8 +23,6 @@ class Account < ApplicationRecord
   enum role: ROLES_HASH
 
   has_secure_password
-
-  attr_accessor :remember_token
 
   class << self
     def digest string
@@ -44,6 +45,28 @@ class Account < ApplicationRecord
     update remember_digest: nil
   end
 
+  def activate
+    update activated: true, activated_at: Time.zone.now
+  end
+
+  def send_activation_email
+    AccountMailer.account_activation(self).deliver_now
+  end
+
+  def create_reset_digest
+    self.reset_token = Account.new_token
+    update reset_digest: Account.digest(reset_token),
+           reset_sent_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    AccountMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < Settings.accounts.email.expired_hours.hours.ago
+  end
+
   def authenticated? attribute, token
     digest = send "#{attribute}_digest"
     return false if digest.nil?
@@ -55,5 +78,10 @@ class Account < ApplicationRecord
 
   def downcase_email
     email.downcase!
+  end
+
+  def create_activation_digest
+    self.activation_token = Account.new_token
+    self.activation_digest = Account.digest activation_token
   end
 end

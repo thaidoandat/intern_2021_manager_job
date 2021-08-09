@@ -57,7 +57,7 @@
                       <h3><%= t ".information" %></h3>
                       <ul>
                         <li><i class="fa fa-building"></i><h3><%= t ".name" %></h3><span><%= @company.name %></span></li>
-                        <li><i class="fa fa-file-text"></i><h3><%= t ".posted_jobs" %></h3><span>2</span></li>
+                        <li><i class="fa fa-file-text"></i><h3><%= t ".posted_jobs" %></h3><span><%= @jobs.count %></span></li>
                         <li><i class="fa fa-map"></i><h3><%= t ".location" %></h3><span><%= @company.address %></span></li>
                         <li><i class="fa fa-clock-o"></i><h3><%= t ".since" %></h3><span><%= @company.created_at.year %></span></li>
                         <li><i class="fa fa-phone"></i><h3><%= t ".phone_number" %></h3><span><%= @company.phone_number %></span></li>
