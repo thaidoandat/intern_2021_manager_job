@@ -1,6 +1,7 @@
 vi:
   controller:
     job_not_found: "Công việc bạn đang tìm kiếm không tồn tại"
+    user_not_found: "Không tìm thấy người dùng!"
     company_not_found: "Không tìm thấy công ty"
     applied: "Ứng tuyển thành công!"
     profile_updated: "Trang cá nhân đã đươc cập nhật"
@@ -20,7 +21,7 @@ vi:
       login: "Đăng nhập"
       logout: "Đăng xuất"
       profile: "Hồ Sơ"
-      categories: "Danh mục công việc"
+      categories: "Danh mục"
       jobs: "Công việc"
     footer:
       address: "Collin Street West, Victor 8007, Australia."
@@ -71,6 +72,14 @@ vi:
         birthday: "Ngày sinh"
       submit_text: "Cập nhật"
   partial:
+    edit_info_form:
+      name: "Tên"
+      email: "Email"
+      phone: "SĐT"
+      gender: "Giới tính"
+      birthday: "Ngày sinh"
+      address: "Địa chỉ"
+      update: "Cập nhật"
     search_basic:
       intro: "Đây là cách dễ nhất để bạn tìm việc"
       small_intro: "Tìm việc, cơ hội nghề nghiệp dễ dàng"
@@ -113,8 +122,21 @@ vi:
       description: "Giới thiệu công ty"
       update: "Cập nhật"
   users:
+    edit:
+      check_your_info: "Kiểm tra thông tin của bạn"
+      will_affect_profile: "Thay đổi ở đây sẽ ảnh hưởng hồ sơ của bạn"
+      update: "Cập nhật"
     new:
       necessary_info: "Cung cấp thông tin cần thiết"
+    show:
+      profile: "Hồ sơ cá nhân"
+      objective: "Mục tiêu:"
+      work_experiences: "Kinh nghiệm làm việc:"
+      educations: "Bằng cấp:"
+      skills: "Kĩ năng:"
+      interests: "Sở thích:"
+      applied_job: "Việc làm đã ứng tuyển"
+      edit_btn: "Thay đổi"
   sessions:
     new:
       login: "Đăng nhập"

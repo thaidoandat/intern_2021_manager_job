@@ -1,11 +1,13 @@
 en:
   controller:
     job_not_found: "Job not found"
+    user_not_found: "User not found"
     company_not_found: "Company not found"
     applied: "Applied!"
     profile_updated: "Profile updated"
     profile_update_failed: "Profile update failed"
     provide_info_success: "Provide information successfully"
+    provide_info_fail: "Provide information failed"
     no_permission: "You don't have permission to access!"
   layouts:
     header:
@@ -61,7 +63,7 @@ en:
       placeholder:
         email: "Enter your email"
         password: "Enter your password"
-    infor_form:
+    info_form:
       placeholder:
         name: "Name"
         address: "Address"
@@ -71,6 +73,13 @@ en:
         birthday: "Birthday"
       submit_text: "Update"
   partial:
+    edit_info_form:
+      name: "Name"
+      email: "Email"
+      phone: "Phone number"
+      gender: "Gender"
+      birthday: "Birthday"
+      address: "Address"
     search_basic:
       intro: "The Easiest Way to Get Your New Job"
       small_intro: "Find Jobs, Employment & Career Opportunities"
@@ -113,8 +122,21 @@ en:
       description: "Description"
       update: "Update"
   users:
+    edit:
+      check_your_info: "Check your information"
+      will_affect_profile: "Change this information will affect your profile"
+      update: "Update"
     new:
       necessary_info: "Provide necessary information"
+    show:
+      profile: "Profile"
+      objective: "Objective:"
+      work_experiences: "Work experiences:"
+      educations: "Educations:"
+      skills: "Skills:"
+      interests: "Interests:"
+      applied_job: "Applied Jobs"
+      edit_btn: "Edit"
   sessions:
     new:
       login: "Log in"
@@ -143,6 +165,7 @@ en:
       description: "Job Description"
       requirement: "Requirement Knowledge, Skills, Education And Experience"
       benefit: "Job Benefit"
+      applied: "Applied"
       apply: "Apply for job"
       all_jobs: "View All Jobs"
       edit: "Edit Job Information"

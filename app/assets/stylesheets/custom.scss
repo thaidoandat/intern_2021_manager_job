@@ -11,7 +11,7 @@
     width: 300px;
   }
 
-  height: 350px;
+  max-height: 350px;
 }
 
 .row-profile {
@@ -19,7 +19,7 @@
 }
 
 .pf-title {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .pf-field {
@@ -29,6 +29,49 @@
   }
 
   input, textarea {
-    font-size: 15px;
+    font-size: 18px;
   }
+}
+
+.pf-title-bold {
+  font-weight: 600;
+}
+
+.user-info {
+  font-size: 16px;
+  padding: 10px 20px;
+  color: #000;
+  span {
+    display: inline-block;
+    min-width: 100px;
+  }
+}
+
+.logout-btn {
+  input {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    margin-top: -2px;
+  }
+}
+
+.title-applied-job {
+  margin-bottom: 70px;
+}
+
+.text-applied-job {
+  margin-bottom: 0px;
+}
+
+.info-name {
+  margin: 5px -5px;
+}
+
+.info-right {
+  margin-top: -30px;
+}
+
+.row-edit-button {
+  padding-top: 50px;
 }

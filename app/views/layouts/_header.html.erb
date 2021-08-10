@@ -13,7 +13,7 @@
             <li class="signup-popup">
               <%= link_to t(".profile"), profile_link %>
             </li>
-            <li class="signup-popup">
+            <li class="signup-popup logout-btn">
               <%= button_to t(".logout"), logout_path, method: :delete %>
             </li>
           <% else %>
@@ -32,7 +32,7 @@
       </div><!-- Btn Extras -->
       <nav>
         <ul>
-          <li class="menu-item-has-children">
+          <li class="menu-item">
             <%= link_to t(".home"), root_path %>
           </li>
           <li class="menu-item-has-children">
@@ -41,11 +41,19 @@
           <li class="menu-item-has-children">
             <%= link_to t(".jobs"), jobs_path %>
           </li>
-          <li class="menu-item-has-children">
-            <%= link_to t(".about"), "#" %>
-          </>
-          <li class="menu-item-has-children">
+          <li class="menu-item">
             <%= link_to t(".contact"), "#" %>
+          </li>
+          <li class="menu-item-has-children">
+            <%= link_to t(".language"), "#" %>
+            <ul>
+              <li>
+                <%= link_to t(".english"), locale: :en %>
+              </li>
+              <li>
+                <%= link_to t(".vietnamese"), locale: :vi %>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav><!-- Menus -->

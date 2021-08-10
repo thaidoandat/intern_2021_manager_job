@@ -1,0 +1,121 @@
+<section>
+  <div class="block no-padding gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner2">
+            <div class="inner-title2 check-info">
+              <h3>
+                <%= t ".profile" %>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="ava-profile">
+                <%= image_tag Settings.image.user_avatar %>
+              </div>
+              <div class="user-info">
+                <h1 class="info-name"><%= @user.name %></h1>
+                <h6>Backend Developer</h6>
+              </div>
+              <div class="user-info">
+                <span>Email:</span>
+                <span><%= @current_account.email %></span>
+              </div>
+              <div class="user-info">
+                <span>Phone:</span>
+                <span><%= @user.phone_number %></span>
+              </div>
+              <div class="user-info">
+                <span>Gender:</span>
+                <span><%= @user.gender %></span>
+              </div>
+              <div class="user-info">
+                <span>Birthday:</span>
+                <span><%= @user.birthday %></span>
+              </div>
+              <div class="user-info">
+                <span>Address:</span>
+                <span><%= @user.address %></span>
+              </div>
+            </div>
+
+            <div class="col-lg-8 info-right">
+              <div class="col-lg-11">
+                <div class="pf-title pf-title-bold">
+                  <%= t ".objective" %>
+                </div>
+                <div class="pf-field">
+                  <%= @user.objective %>
+                </div>
+              </div>
+              <div class="col-lg-11">
+                <div class="pf-title pf-title-bold">
+                  <%= t ".work_experiences" %>
+                </div>
+                <div class="pf-field">
+                  <%= @user.work_experiences %>
+                </div>
+              </div>
+              <div class="col-lg-11">
+                <div class="pf-title pf-title-bold">
+                  <%= t ".educations" %>
+                </div>
+                <div class="pf-field">
+                  <%= @user.educations %>
+                </div>
+              </div>
+              <div class="col-lg-11">
+                <div class="pf-title pf-title-bold">
+                  <%= t ".skills" %>
+                </div>
+                <div class="pf-field">
+                  <%= @user.skills %>
+                </div>
+              </div>
+              <div class="col-lg-11">
+                <div class="pf-title pf-title-bold">
+                  <%= t ".interests" %>
+                </div>
+                <div class="pf-field">
+                  <%= @user.interests %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row-edit-button">
+        <div class="col-lg-12">
+          <%= link_to edit_user_path do%>
+            <button>
+              <%= t ".edit_btn" %>
+            </button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="title-applied-job">
+  <div class="container">
+    <div class="pf-title pf-title-bold">
+      <h3 class="text-applied-job">
+        <%= t(".applied_job") %>
+      </h3>
+    </div>
+    <%= render @jobs %>
+    <%= paginate @jobs %>
+  </div>
+</section>
