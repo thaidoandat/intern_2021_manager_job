@@ -9,8 +9,8 @@
   <div class="cfield">
     <%= f.password_field :password_confirmation, placeholder: t(".placeholder.password_confirmation") %>
   </div>
-  <div class="cfield">
+  <div>
     <%= f.select :role, role_options %>
   </div>
-  <%= f.submit t(".submit_text") %>
+  <%= f.submit t(".submit_text"), class:"btn btn-primary" %>
 <% end %>

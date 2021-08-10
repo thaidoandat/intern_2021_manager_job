@@ -58,11 +58,12 @@ vi:
         password_confirmation: "Nhập lại mật khẩu"
     login_form:
       submit_text: "Đăng nhập"
-      remember: "Ghi nhơ đăng nhập"
+      remember: "Ghi nhớ đăng nhập"
+      forgot_password: "Quên mật khẩu?"
       placeholder:
         email: "Nhập email"
         password: "Nhập mật khẩu"
-    infor_form:
+    info_form:
       placeholder:
         name: "Tên"
         address: "Địa chỉ"
@@ -71,6 +72,8 @@ vi:
         gender: "Giới tính"
         birthday: "Ngày sinh"
       submit_text: "Cập nhật"
+      gender: "Giới tính"
+      birthday: "Ngày sinh"
   partial:
     edit_info_form:
       name: "Tên"
@@ -96,6 +99,7 @@ vi:
       success: "Tài khoản của bạn đã được tạo"
       failure: "Tạo tài khoản thất bại"
       invalid_role: "role của tài khoản không thỏa mãn"
+      check_email_to_activate: "Vui lòng kiểm tra email của bạn để xác thực tài khoản."
   companies:
     new:
       necessary_info: "Cung cấp thông tin cần thiết"
@@ -176,54 +180,63 @@ vi:
       success: "Job has been created"
       failure: "Create job fail"
     update:
-      success: "Job has been updated"
-      failure: "Update job fail"
-    job_form:
-      name: "Job Title"
-      description: "Job Description"
-      salary: "Offered Salary"
-      category: "Job Category"
-      quantity: "Quantity"
-      requirement: "Requirement"
-      benefit: "Benefit"
-      expire_at: "Deadline Date"
-      submit_text: "Create Job"
-      placeholder:
-        name: "Enter Job Title"
-        description: "Describe about job"
-    job:
-      detail: "View Detail"
-    side_bar:
-      profile: "My Profile"
-      manage_jobs: "Manage Jobs"
-      edit_profile: "Edit Profile"
-      post_job: "Post New Job"
-      logout: "Logout"
-    job_filter:
-      date_post: "Date Posted"
-      job_category: "Job Category"
-      salary: "Offered Salary"
+      success: "Công việc đã được cập nhật"
+      failure: "Cập nhật công việc thất bại"
   user_apply_jobs:
     form_apply:
-      name: "Name:"
+      name: "Tên:"
       email: "Email:"
-      phone: "Phone:"
-      gender: "Gender:"
-      birthday: "Birthday:"
-      address: "Address:"
+      phone: "Số điện thoại:"
+      gender: "Giới tính:"
+      birthday: "Ngày sinh:"
+      address: "Địa chỉ:"
       objective: "Objective:"
-      work_experiences: "Work experiences:"
-      educations: "Educations:"
-      skills: "Skills:"
-      interests: "Interests:"
-      apply: "Apply"
+      work_experiences: "Kinh nghiệm làm việc:"
+      educations: "Học vấn:"
+      skills: "Kỹ năng:"
+      interests: "Sở thích:"
+      apply: "Nộp đơn"
     new:
-      check_your_info: "Check your information"
-      will_affect_profile: "Change this information will affect your profile"
-  views:
-    pagination:
-      first: "« ĐẦU"
-      last: "CUỐI »"
-      previous: "‹ TRƯỚC"
-      next: "SAU ›"
-      truncate: "…"
+      check_your_info: "Kiểm tra thông tin của bạn"
+      will_affect_profile: "Thay đổi thông tin sẽ ảnh hưởng trực tiếp tới hồ sơ của bạn"
+  mailers:
+    account_mailer:
+      subject_email: "Xác thực tài khoản"
+      password_reset: "Lấy lại mật khẩu"
+  account_mailer:
+    account_activation:
+      app_name: "ITViec"
+      greeting: "Chào bạn,"
+      intro: "Chào mừng bạn đến với ITViec! Chọn vào đường dẫn ở dưới để
+        xác thực tài khoản:"
+      active: "Kích hoạt"
+    password_reset:
+      intro: "Để đổi mật khẩu, nhấn vào đường dẫn bên dưới:"
+      expire: "Đường dẫn sẽ hết hạn trong hai tiếng"
+      ignore: "Nếu bạn không yêu cầu thay đổi mật khẩu, vui lòng bỏ qua email
+        này và mật khẩu của bạn sẽ không thay đổi."
+      reset_password: "Lấy lại mật khẩu"
+  password_resets:
+    invalid: "Tài khoản không hợp lệ"
+    password_reset_expired: "Thời hạn lấy lại mật khẩu đã hết"
+    create:
+      reset_password_email: "Email đã được gửi kèm hướng dẫn đổi mật khẩu"
+      email_not_found: "Email không tồn tại"
+    new:
+      forgot_password: "Quên mật khẩu"
+      submit: "Xác nhận"
+      email: "Email"
+    edit:
+      reset_password: "Lấy lại mật khẩu"
+      update_password: "Cập nhật mật khẩu"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+    update:
+      no_empty: "không thể trống"
+      reset_password_success: "Mật khẩu đã được cập nhật."
+  activerecord:
+    attributes:
+      account:
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"

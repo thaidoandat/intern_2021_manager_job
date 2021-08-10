@@ -60,6 +60,7 @@ en:
     login_form:
       submit_text: "Log in"
       remember: "Remember me on this computer"
+      forgot_password: "Forgot password?"
       placeholder:
         email: "Enter your email"
         password: "Enter your password"
@@ -72,6 +73,8 @@ en:
         gender: "Gender"
         birthday: "Birthday"
       submit_text: "Update"
+      gender: "Gender"
+      birthday: "Birthday"
   partial:
     edit_info_form:
       name: "Name"
@@ -96,6 +99,7 @@ en:
       success: "Your account has been created"
       failure: "Create account fail"
       invalid_role: "Invalid account role"
+      check_email_to_activate: "Please check your email to activate your account."
   companies:
     new:
       necessary_info: "Provide necessary information"
@@ -227,3 +231,43 @@ en:
       previous: "‹ PREV"
       next: "NEXT ›"
       truncate: "…"
+  mailers:
+    account_mailer:
+      subject_email: "Account activation"
+      password_reset: "Password reset"
+  account_mailer:
+    account_activation:
+      app_name: "ITViec"
+      greeting: "Hi guy,"
+      intro: "Welcome to the ITViec! Click on the link below to activate your account:"
+      active: "Active"
+    password_reset:
+      intro: "To reset your password click the link below:"
+      expire: "This link will expire in two hours."
+      ignore: "If you did not request your password to be reset, please ignore
+        this email and your password will stay as it is."
+      reset_password: "Reset password"
+  password_resets:
+    invalid: "Invalid account"
+    password_reset_expired: "Password reset has expired"
+    create:
+      reset_password_email: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+    new:
+      forgot_password: "Forgot password"
+      submit: "Submit"
+      email: "Email"
+    edit:
+      reset_password: "Reset password"
+      update_password: "Update password"
+      password: "Password"
+      password_confirmation: "Confirmation"
+    update:
+      no_empty: "can't be empty"
+      reset_password_success: "Password has been reset."
+  activerecord:
+    attributes:
+      account:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm password"

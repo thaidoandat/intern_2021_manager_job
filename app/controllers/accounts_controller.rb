@@ -7,15 +7,11 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new account_params
+    return render :new unless @account.save
 
-    if @account.save
-      flash[:success] = t "accounts.create.success"
-      log_in @account
-      redirect_register_information @account
-    else
-      flash[:danger] = t "accounts.create.failure"
-      render :new
-    end
+    @account.send_activation_email
+    flash[:info] = t "accounts.create.check_email_to_activate"
+    redirect_to root_path
   end
 
   private

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :users, except: %i(index destroy)
     resources :companies, except: %i(index destroy)
     resources :user_apply_jobs, only: %i(new create)
+    resources :account_activations, only: :edit
+    resources :password_resets, except: %i(show index destroy)
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"

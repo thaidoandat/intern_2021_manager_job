@@ -11871,5 +11871,53 @@ input[type="submit"] {
 }
 
 .update {
-    margin-top: 40px;
+  margin-top: 40px;
+}
+
+.description {
+  font-weight: 200;
+  font-size: 14px;
+  color: #888888;
+  margin-bottom: 50px;
+  line-height: 20px;
+  font-style: italic;
+}
+
+.job-is.fl {
+  cursor: pointer;
+}
+
+.check-info {
+  padding: 40px 0px;
+}
+
+.ava-profile {
+  height: 350px;
+
+  img {
+    width: 300px;
+  }
+}
+
+.row-profile {
+  margin: -30px -20px;
+}
+
+.pf-title {
+  font-size: 15px;
+}
+
+.pf-field {
+  textarea {
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  input, textarea {
+    font-size: 15px;
+  }
+}
+
+.update {
+  margin-top: 40px;
 }
