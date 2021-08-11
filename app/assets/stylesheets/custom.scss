@@ -1,3 +1,5 @@
+@import "color";
+
 .job-is.fl {
   cursor: pointer;
 }
@@ -31,6 +33,18 @@
   input, textarea {
     font-size: 18px;
   }
+
+  select {
+    width: 100%;
+    border: 2px solid $gray_light;
+    border-radius: 8px;
+    padding: 14px 45px 14px 15px;
+    background: $white;
+    font-family: Open Sans;
+    font-size: 18px;
+    color: $black_lighter;
+    line-height: 24px;
+  }
 }
 
 .pf-title-bold {
@@ -40,7 +54,7 @@
 .user-info {
   font-size: 16px;
   padding: 10px 20px;
-  color: #000;
+  color: $black;
   span {
     display: inline-block;
     min-width: 100px;
@@ -50,7 +64,7 @@
 .logout-btn {
   input {
     background-color: transparent;
-    color: #fff;
+    color: $white;
     border: none;
     margin-top: -2px;
   }
@@ -95,7 +109,7 @@
 }
 
 .password-reset {
-  color: #15287c
+  color: $deep_koamaru;
 }
 
 .c-reset {
@@ -113,4 +127,59 @@
 
 input[type="checkbox"] {
   display: block;
+}
+
+.job-style-bx {
+  margin-bottom: 10px;
+  padding: 25px 15px;
+  button {
+    margin-bottom: 14px;
+  }
+
+  i {
+    font-style: italic;
+  }
+}
+
+.job-lctn {
+  margin-right: 20px;
+  i {
+    color: $radical_red;
+  }
+}
+
+.job-company-name {
+  font-size: 14px;
+  color: $radical_red;
+  margin: -2px 0px 5px 131px;
+}
+
+.c-logo {
+  margin-right: 10px;
+  margin-top: 10px;
+  height: 56px;
+}
+
+.submit-btn-custom {
+  input {
+    font-family: open sans;
+    font-size: 18px;
+    color: $gray;
+    padding: 10px 30px;
+    background-color: $white;
+    border-radius: 8px;
+    margin-right: 20px;
+    border: 2px solid $gray;
+    &:hover {
+      color: $white;
+      background-color: $black;
+      transition: 0.3s;
+    }
+  }
+}
+
+.login-input {
+  input {
+    color: $red;
+  }
 }

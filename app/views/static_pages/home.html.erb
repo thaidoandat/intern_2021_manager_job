@@ -12,6 +12,9 @@
               <div class="company-list">
                 <%= render @companies %>
               </div>
+              <div class="pagination">
+                <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+              </div>
             </div>
           </div>
         </div>
@@ -33,6 +36,9 @@
             </div>
             <div class="job-listings-sec">
               <%= render @jobs %>
+            </div>
+            <div class="pagination">
+                <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
             </div>
           </div>
         </div>

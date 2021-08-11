@@ -1,11 +1,16 @@
 <div class="job-listing wtabs">
   <div class="job-title-sec">
+    <div class="c-logo">
+      <%= link_to image_tag(Settings.image.company_logo), job.company %>
+    </div>
     <h3><%= job.name %></h3>
     <span><%= render_job_categories job %></span>
+    <div class="job-company-name"><%= job.company_name %></div>
+    <div class="job-lctn"><i class="fas fa-dollar-sign"></i><%= job.salary %> $ </div>
     <div class="job-lctn"><i class="fa fa-map-marker"></i><%= job.company_address %></div>
   </div>
   <div class="job-style-bx">
-    <button class="btn btn-info">
+    <button class="btn btn-primary">
       <%= link_to t(".detail"), job_path(job) %>
     </button>
     <i><%= job.expire_at.strftime Settings.date_format %></i>

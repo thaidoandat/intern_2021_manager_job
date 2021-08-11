@@ -58,7 +58,9 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_to root_path unless current_owner == @user
+    return if current_owner == @user
+
+    redirect_to root_path
     flash[:warning] = t "controller.no_permission"
   end
 
