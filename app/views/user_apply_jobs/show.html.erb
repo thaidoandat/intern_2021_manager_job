@@ -3,7 +3,8 @@
     <div class="container">
       <div class="row">
         <h3><%= t "list-candidates" %></h3>
-        <%= render partial: "user_apply_jobs/user_apply_job", collection: @user_apply_jobs, as: :user_apply_job %>
+        <%= render partial: "user_apply_jobs/user_apply_job",
+          collection: @user_apply_jobs, as: :user_apply_job %>
       </div>
     </div>
   </div>

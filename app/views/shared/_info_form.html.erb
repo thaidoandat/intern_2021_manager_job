@@ -1,31 +1,76 @@
 <%= form_for object do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  <div class="cfield">
-    <%= f.text_field :name, placeholder: t(".placeholder.name") %>
+  <div class="row row-info-input">
+      <div class="col-lg-6">
+        <div class="pf-title">
+          <%= t ".name" %>
+          <span class="required-field"></span>
+        </div>
+        <div class="pf-field">
+          <%= f.text_field :name, placeholder: t(".placeholder.name") %>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="pf-title">
+          <%= t ".phone" %>
+          <span class="required-field"></span>
+        </div>
+        <div class="pf-field">
+          <%= f.text_field :phone_number, placeholder: t(".placeholder.phone_number") %>
+        </div>
+      </div>
   </div>
-  <div class="cfield">
-    <%= f.text_field :address, placeholder: t(".placeholder.address") %>
+
+  <div class="row row-info-input">
+      <div class="col-lg-11">
+        <div class="pf-title">
+          <%= t ".address" %>
+          <span class="required-field"></span>
+        </div>
+        <div class="pf-field">
+          <%= f.text_field :address, placeholder: t(".placeholder.address") %>
+        </div>
+      </div>
   </div>
-  <div class="cfield">
-    <%= f.text_field :phone_number, placeholder: t(".placeholder.phone_number") %>
-  </div>
+
   <% if current_account.company? %>
-    <div>
-      <%= f.text_area :description, placeholder: t(".placeholder.description"), class:"des" %>
+    <div class="row row-info-input">
+        <div class="col-lg-11">
+          <div class="pf-title">
+            <%= t ".description" %>
+            <span class="required-field"></span>
+          </div>
+          <div class="pf-field">
+            <%= f.text_area :description, placeholder: t(".placeholder.description"), class:"des" %>
+          </div>
+        </div>
     </div>
   <% elsif current_account.user? %>
-    <div class="select">
-      <%= t ".gender" %>
-      <span class="select-1"><%= f.select :gender, gender_options %><span>
+    <div class="row row-info-input">
+        <div class="col-lg-4">
+          <div class="pf-title">
+            <%= t ".gender" %>
+            <span class="required-field"></span>
+          </div>
+          <div class="pf-field">
+            <%= f.select :gender, gender_options %>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="pf-title">
+            <%= t ".birthday" %>
+            <span class="required-field"></span>
+          </div>
+          <div class="pf-field">
+            <%= f.date_field :birthday %>
+          </div>
+        </div>
     </div>
-    <div class="select">
-      <%= t ".birthday" %>
-      <span class="select-2"><%= f.date_field :birthday %><span>
-    </div>
+
     <section>
       <div class="block">
         <div class="container">
-          <div class="row">
+          <div class="row user-info-input">
             <div class="col-lg-12">
               <%= render "partial/info_apply_form", field: :user_info, form: f %>
             </div>
@@ -34,5 +79,6 @@
       </div>
     </section>
   <% end %>
-  <%= f.submit t(".submit_text"), class:"btn btn-primary"%>
+
+  <%= f.submit t(".submit_text"), class:"btn btn-primary new-info-btn"%>
 <% end %>

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   USER_PARAMS = %i(name address phone_number gender birthday).freeze
+  UPDATE_PARAMS = [UserApplyJob::APPLY_PARAMS,
+                   account_attributes: [:avatar]].freeze
   GENDER_HASH = {men: 0, women: 1, other: 2}.freeze
 
   belongs_to :account
@@ -8,6 +10,7 @@ class User < ApplicationRecord
   has_many :jobs, through: :user_apply_jobs
 
   accepts_nested_attributes_for :user_info
+  accepts_nested_attributes_for :account, update_only: true
 
   validates :account_id, presence: true
   validates :name, presence: true, uniqueness: {case_sensitive: false},
@@ -26,7 +29,7 @@ class User < ApplicationRecord
 
   delegate :objective, :work_experiences, :educations, :skills,
            :interests, to: :user_info
-  delegate :email, to: :account
+  delegate :email, :avatar, to: :account
 
   def apply job
     jobs << job

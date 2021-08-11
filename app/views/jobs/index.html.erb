@@ -5,15 +5,16 @@
         <aside class="col-lg-3 column">
           <%= render "jobs/job_filter" %>
         </aside>
-        <div class="col-lg-9 column">
+        <div class="col-lg-1 column"></div>
+        <div class="col-lg-8 column">
           <div class="modrn-joblist np">
             <h5 class="job-count"><%= t ".job_count", num: @jobs.count %></h5>
             <div class="job-list-modern">
-              <div class="job-listings-sec no-border">
+              <div class="job-listings-sec" id="jobs-list">
                 <%= render @jobs %>
               </div>
-              <div class="pagination">
-                <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+              <div class="pagination" id="jobs_paginator">
+                <%= paginate @jobs, remote: true, theme: "twitter-bootstrap-3" %>
               </div><!-- Pagination -->
             </div>
           </div>

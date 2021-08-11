@@ -65,6 +65,12 @@ vi:
         email: "Nhập email"
         password: "Nhập mật khẩu"
     info_form:
+      name: "Tên:"
+      phone: "Số điện thoại:"
+      address: "Địa chỉ:"
+      description: "Giới thiệu:"
+      gender: "Giới tính:"
+      birthday: "Ngày sinh:"
       placeholder:
         name: "Tên"
         address: "Địa chỉ"
@@ -121,6 +127,7 @@ vi:
       update_profile: "Cập nhật trang công ty"
       can_change: "Bạn có thể chỉnh sửa thông tin công ty tại đây"
     edit_company_form:
+      change_avatar: "Thay đổi ảnh đại diện"
       name: "Tên"
       email: "Email"
       phone: "Số điện thoại"
@@ -137,6 +144,7 @@ vi:
     new:
       necessary_info: "Cung cấp thông tin cần thiết"
     show:
+      change_avatar: "Thay đổi ảnh đại diện"
       profile: "Hồ sơ cá nhân"
       objective: "Mục tiêu:"
       work_experiences: "Kinh nghiệm làm việc:"
@@ -145,6 +153,11 @@ vi:
       interests: "Sở thích:"
       applied_job: "Việc làm đã ứng tuyển"
       edit_btn: "Thay đổi"
+      email: "Email: "
+      phone: "SĐT: "
+      gender: "Giới tính: "
+      address: "Địa chỉ: "
+      birthday: "Ngày sinh: "
     user:
       view_profile: "View Profile"
   sessions:
@@ -159,26 +172,30 @@ vi:
       not_found: "Không tìm thấy tài khoản"
   jobs:
     job:
-      applied: "Applied"
-      apply_job: "Apply Job"
-    not_found: "Job not found"
+      applied: "Đã ứng tuyển"
+      apply_job: "Ứng tuyển"
+      view: "Xem"
+    not_found: "Không tìm thấy công việc"
     index:
-      job_count: "%{num} Jobs & Vacancies"
+      job_count: "%{num} Việc làm"
     new:
-      post_job: "Post New Job"
+      post_job: "Tạo việc làm"
+      submit_text: "Tạo Công việc"
     show:
-      salary: "Monthly Salary : "
-      post_date: "Post Date: "
-      categories: "Job Categories: "
-      description: "Job Description"
-      requirement: "Requirement Knowledge, Skills, Education And Experience"
-      benefit: "Job Benefit"
-      apply: "Apply for job"
-      all_jobs: "View All Jobs"
-      edit: "Edit Job Information"
-      all_candidates: "All Candidates"
+      salary: "Lương tháng : "
+      post_date: "Ngày đăng: "
+      categories: "Danh mục: "
+      description: "Mô tả công việc"
+      requirement: "Yêu cầu hiểu biết, kĩ năng, học vấn và kinh nghiệm"
+      benefit: "Lợi ích"
+      applied: "Đã ứng tuyển"
+      apply: "Ứng tuyển"
+      all_jobs: "Xem tất cả việc làm"
+      edit: "Thay đổi thông tin việc làm"
+      all_candidates: "Danh sách ứng viên"
     edit:
-      edit_job: "Edit Job"
+      edit_job: "Thay đổi công việc"
+      submit_text: "Thay đổi"
       applied: "Đã ứng tuyển"
       apply_job: "Ứng tuyển"
       view: "Xem"
@@ -232,19 +249,19 @@ vi:
       check_your_info: "Kiểm tra thông tin của bạn"
       will_affect_profile: "Thay đổi thông tin sẽ ảnh hưởng trực tiếp tới hồ sơ của bạn"
     show:
-      list_candidates: "List Candidates"
+      list_candidates: "Danh sách ứng viên"
     user_apply_job:
-      accept: "Accept"
-      accepted: "Accepted"
-      decline: "Decline"
+      accept: "Chấp nhận"
+      accepted: "Đã chấp nhận"
+      decline: "Từ chối"
   process_candidates:
-    apply_not_found: "Apply not found"
+    apply_not_found: "Không tìm thấy đơn ứng tuyển"
     update:
-      success: "Accepted"
-      fail: "Accept failure"
+      success: "Chấp nhận thành công"
+      fail: "Chấp nhận thất bại"
     destroy:
-      success: "Decline success"
-      fail: "Decline fail"
+      success: "Từ chối thành công"
+      fail: "Từ chối thất bại"
   views:
     pagination:
       first: "« ĐẦU"
@@ -260,8 +277,7 @@ vi:
     account_activation:
       app_name: "ITViec"
       greeting: "Chào bạn,"
-      intro: "Chào mừng bạn đến với ITViec! Chọn vào đường dẫn ở dưới để
-        xác thực tài khoản:"
+      intro: "Chào mừng bạn đến với ITViec! Chọn vào đường dẫn ở dưới để xác thực tài khoản:"
       active: "Kích hoạt"
     password_reset:
       intro: "Để đổi mật khẩu, nhấn vào đường dẫn bên dưới:"

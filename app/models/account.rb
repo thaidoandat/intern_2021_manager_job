@@ -1,7 +1,7 @@
 class Account < ApplicationRecord
   attr_accessor :activation_token, :remember_token, :reset_token
   before_save :downcase_email
-  before_create :create_activation_digest
+  before_create :create_activation_digest, :set_default_avatar
 
   ACCOUNT_PARAMS = %i(email password password_confirmation role).freeze
   PASSWORD_PARAMS = %i(password password_confirmation).freeze
@@ -9,6 +9,7 @@ class Account < ApplicationRecord
 
   has_one :user, dependent: :destroy
   has_one :company, dependent: :destroy
+  has_one_attached :avatar, dependent: :destroy
 
   validates :email, presence: true, uniqueness: {case_sensitive: false},
             length: {minimum: Settings.accounts.email.length.min,
@@ -19,6 +20,10 @@ class Account < ApplicationRecord
                      maximum: Settings.accounts.password.length.max},
             allow_nil: true
   validates :role, presence: true
+  validates :avatar, content_type: {in: Settings.image_types_accept,
+                                    message: :invalid_format_image},
+                    size: {less_than: Settings.max_image_size.megabytes,
+                           message: :should_smaller}
 
   enum role: ROLES_HASH
 
@@ -83,5 +88,15 @@ class Account < ApplicationRecord
   def create_activation_digest
     self.activation_token = Account.new_token
     self.activation_digest = Account.digest activation_token
+  end
+
+  def set_default_avatar
+    return if avatar.attached?
+
+    avatar.attach(io: File.open(
+      Rails.root.join(Settings.avatar.default_link),
+      filename: Settings.avatar.default,
+      content_type: Settings.avatar.default_type
+    ))
   end
 end
