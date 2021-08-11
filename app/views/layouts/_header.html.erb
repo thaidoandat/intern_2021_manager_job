@@ -5,9 +5,6 @@
         <%= link_to image_tag(Settings.image.logo), root_path %>
       </div><!-- Logo -->
       <div class="btn-extars">
-        <%= link_to "#", class: "post-job-btn" do %>
-          <i class="fa fa-plus"></i><%= t ".post" %>
-        <% end %>
         <ul class="account-btns">
           <% if logged_in? %>
             <li class="signup-popup">

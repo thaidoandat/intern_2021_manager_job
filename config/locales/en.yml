@@ -188,6 +188,10 @@ en:
     edit:
       edit_job: "Edit Job"
       submit_text: "Update Job"
+      applied: "Applied"
+      apply_job: "Apply Job"
+      view: "View"
+    not_found: "Job not found"
     create:
       success: "Job has been created"
       failure: "Create job fail"
