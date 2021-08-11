@@ -27,30 +27,28 @@
               </div>
               <div class="user-info">
                 <h1 class="info-name"><%= @user.name %></h1>
-                <h6>Backend Developer</h6>
               </div>
               <div class="user-info">
-                <span>Email:</span>
-                <span><%= @current_account.email %></span>
+                <span><%= t ".email" %></span>
+                <span><%= @user.email %></span>
               </div>
               <div class="user-info">
-                <span>Phone:</span>
+                <span><%= t ".phone" %></span>
                 <span><%= @user.phone_number %></span>
               </div>
               <div class="user-info">
-                <span>Gender:</span>
+                <span><%= t ".gender" %></span>
                 <span><%= @user.gender %></span>
               </div>
               <div class="user-info">
-                <span>Birthday:</span>
+                <span><%= t ".birthday" %></span>
                 <span><%= @user.birthday %></span>
               </div>
               <div class="user-info">
-                <span>Address:</span>
+                <span><%= t ".address" %></span>
                 <span><%= @user.address %></span>
               </div>
             </div>
-
             <div class="col-lg-8 info-right">
               <div class="col-lg-11">
                 <div class="pf-title pf-title-bold">

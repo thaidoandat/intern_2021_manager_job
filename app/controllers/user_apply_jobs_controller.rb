@@ -1,5 +1,6 @@
 class UserApplyJobsController < ApplicationController
-  before_action :log_in_require, :check_role_user, :get_user_info
+  before_action :log_in_require, :check_role_user,
+                :get_user_info, except: %i(show)
   before_action :find_job, only: %i(create)
 
   def new; end
@@ -13,6 +14,11 @@ class UserApplyJobsController < ApplicationController
       flash[:danger] = t "controller.profile_update_failed"
       render :new
     end
+  end
+
+  def show
+    @job = Job.find_by id: params[:id]
+    @user_apply_jobs = @job.user_apply_jobs.includes(:user)
   end
 
   private
