@@ -9,11 +9,12 @@
               <h2>
                 <%= t ".company_list" %>
               </h2>
-              <div class="company-list">
+              <div class="company-list" id="companies-list">
                 <%= render @companies %>
               </div>
-              <div class="pagination">
-                <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+              <div class="pagination" id="companies_paginator">
+                <%= paginate @companies, remote: true,
+                  param_name: :company_page, theme: "twitter-bootstrap-3" %>
               </div>
             </div>
           </div>
@@ -34,11 +35,12 @@
                 <%= t ".lead_employers" %>
               </span>
             </div>
-            <div class="job-listings-sec">
+            <div class="job-listings-sec" id="jobs-list">
               <%= render @jobs %>
             </div>
-            <div class="pagination">
-                <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+            <div class="pagination" id="jobs_paginator">
+                <%= paginate @jobs, remote: true,
+                  param_name: :job_page, theme: "twitter-bootstrap-3" %>
             </div>
           </div>
         </div>

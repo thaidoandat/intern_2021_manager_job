@@ -65,6 +65,12 @@ en:
         email: "Enter your email"
         password: "Enter your password"
     info_form:
+      name: "Name:"
+      phone: "Phone number:"
+      address: "Address:"
+      description: "Description"
+      gender: "Gender:"
+      birthday: "Birthday:"
       placeholder:
         name: "Name"
         address: "Address"
@@ -121,6 +127,7 @@ en:
       update_profile: "Update Profile"
       can_change: "You can change your information here"
     edit_company_form:
+      change_avatar: "Change avatar"
       name: "Name"
       email: "Email"
       phone: "Phone number"
@@ -137,6 +144,7 @@ en:
     new:
       necessary_info: "Provide necessary information"
     show:
+      change_avatar: "Change avatar"
       profile: "Profile"
       objective: "Objective:"
       work_experiences: "Work experiences:"
@@ -303,3 +311,10 @@ en:
         password_confirmation: "Confirm password"
       check_your_info: "Check your information"
       will_affect_profile: "Change this information will affect your profile"
+    errors:
+      models:
+        account:
+          attributes:
+            avatar:
+              invalid_format_image: "must be a valid image format"
+              should_smaller: "should be less than 5MB"

@@ -23,7 +23,7 @@
                   <div class="col-lg-10">
                     <div class="job-single-head3 emplye">
                       <div class="job-thumb">
-                        <%= image_tag Settings.image.company_avatar %>
+                        <%= show_avatar @company.avatar %>
                       </div>
                       <div class="job-single-info3">
                         <h3><%= @company.name %></h3>
@@ -33,14 +33,16 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-2">
-                    <div class="emply-btns">
-                      <%= link_to t(".edit_profile"), edit_company_path, class: "edit-profile" %>
+                  <% if current_account.company == @company %>
+                    <div class="col-lg-2">
+                      <div class="emply-btns">
+                        <%= link_to t(".edit_profile"), edit_company_path, class: "edit-profile" %>
+                      </div>
+                      <div class="emply-btns">
+                        <%= link_to t(".create_new_job"), new_job_path, class: "edit-profile" %>
+                      </div>
                     </div>
-                    <div class="emply-btns">
-                      <%= link_to t(".create_new_job"), new_job_path, class: "edit-profile" %>
-                    </div>
-                  </div>
+                  <% end %>
                 </div>
               </div>
               <div class="job-wide-devider">

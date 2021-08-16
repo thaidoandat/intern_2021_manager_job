@@ -65,6 +65,12 @@ vi:
         email: "Nhập email"
         password: "Nhập mật khẩu"
     info_form:
+      name: "Tên:"
+      phone: "Số điện thoại:"
+      address: "Địa chỉ:"
+      description: "Giới thiệu:"
+      gender: "Giới tính:"
+      birthday: "Ngày sinh:"
       placeholder:
         name: "Tên"
         address: "Địa chỉ"
@@ -121,6 +127,7 @@ vi:
       update_profile: "Cập nhật trang công ty"
       can_change: "Bạn có thể chỉnh sửa thông tin công ty tại đây"
     edit_company_form:
+      change_avatar: "Thay đổi ảnh đại diện"
       name: "Tên"
       email: "Email"
       phone: "Số điện thoại"
@@ -137,6 +144,7 @@ vi:
     new:
       necessary_info: "Cung cấp thông tin cần thiết"
     show:
+      change_avatar: "Thay đổi ảnh đại diện"
       profile: "Hồ sơ cá nhân"
       objective: "Mục tiêu:"
       work_experiences: "Kinh nghiệm làm việc:"

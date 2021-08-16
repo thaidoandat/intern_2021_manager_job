@@ -91,10 +91,18 @@ image:
   ch_play: "resource/dw2.png"
   background_search: "resource/vector-1.png"
   company_logo: "resource/l2.png"
-  user_avatar: "resource/t3.jpg"
-  company_avatar: "resource/logo_company.png"
+avatar:
+  default: "default_avatar.png"
+  default_link: "app/assets/images/default_avatar.png"
+  default_type: "image/png"
+image_types_accept:
+  - image/jpeg
+  - image/gif
+  - image/png
+  - image/jpg
 date_format: "%d-%m-%Y"
 number_field:
   min: 0
   step: 1
   default_value: 0
+max_image_size: 5

@@ -1,0 +1,4 @@
+$('#jobs-list').html('<%= j render(@jobs) %>');
+$('#jobs_paginator').html(
+  '<%= j paginate(@jobs, remote: true, theme: 'twitter-bootstrap-3') %>'
+);

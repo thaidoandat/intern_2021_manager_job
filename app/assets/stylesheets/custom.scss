@@ -28,6 +28,7 @@
   textarea {
     padding: 20px;
     font-size: 15px;
+    height: 100px;
   }
 
   input, textarea {
@@ -182,4 +183,43 @@ input[type="checkbox"] {
   input {
     color: $red;
   }
+}
+
+.new-info-btn {
+  padding: 10px 15px !important;
+  font-size: 20px;
+}
+
+.row-info-input {
+  width: 90%;
+  margin: auto;
+  margin-bottom: -20px;
+}
+
+.upcase-h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $black;
+  margin-bottom: 30px;
+}
+
+.user-info-input {
+  width: 93%;
+  margin: auto;
+}
+
+.job-style-bx-custom {
+  width: 290px;
+  .btn {
+    display: inline-block;
+    float: left;
+    margin: 0px 0px 0px 20px !important;
+    width: 100px;
+    height: 45px;
+  }
+}
+
+.required-field::before {
+  content: '*';
+  color: $red;
 }

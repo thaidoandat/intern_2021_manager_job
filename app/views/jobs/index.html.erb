@@ -10,11 +10,11 @@
           <div class="modrn-joblist np">
             <h5 class="job-count"><%= t ".job_count", num: @jobs.count %></h5>
             <div class="job-list-modern">
-              <div class="job-listings-sec">
+              <div class="job-listings-sec" id="jobs-list">
                 <%= render @jobs %>
               </div>
-              <div class="pagination">
-                <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+              <div class="pagination" id="jobs_paginator">
+                <%= paginate @jobs, remote: true, theme: "twitter-bootstrap-3" %>
               </div><!-- Pagination -->
             </div>
           </div>

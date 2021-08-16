@@ -3,8 +3,13 @@
   <div class="row">
     <div class="col-lg-4">
       <div class="ava-profile">
-        <%= image_tag Settings.image.user_avatar %>
+        <%= show_avatar @user.avatar %>
       </div>
+      <span class="avatar">
+        <%= f.fields_for :account do |ff| %>
+          <%= ff.file_field :avatar %>
+        <% end %>
+      </span>
     </div>
 
     <div class="col-lg-8">

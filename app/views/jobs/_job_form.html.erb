@@ -2,18 +2,21 @@
   <div class="row">
     <div class="col-lg-12">
       <span class="pf-title"><%= t ".name" %></span>
+      <span class="required-field"></span>
       <div class="pf-field">
         <%= f.text_field :name, placeholder: t(".placeholder.name") %>
       </div>
     </div>
     <div class="col-lg-12">
       <span class="pf-title"><%= t ".description" %></span>
+      <span class="required-field"></span>
       <div class="pf-field">
         <%= f.text_area :description, placeholder: t(".placeholder.description") %>
       </div>
     </div>
     <div class="col-lg-6">
       <span class="pf-title"><%= t ".salary" %></span>
+      <span class="required-field"></span>
       <div class="pf-field">
         <%= f.number_field :salary, min: Settings.number_field.min,
                             step: Settings.number_field.step,
@@ -22,6 +25,7 @@
     </div>
     <div class="col-lg-6">
       <span class="pf-title"><%= t ".quantity" %></span>
+      <span class="required-field"></span>
       <div class="pf-field">
         <%= f.number_field :quantity, min: Settings.number_field.min,
                             step: Settings.number_field.step,
@@ -36,18 +40,21 @@
     </div>
     <div class="col-lg-12">
       <span class="pf-title"><%= t ".requirement" %></span>
+      <span class="required-field"></span>
       <div class="pf-field">
         <%= f.text_area :requirement %>
       </div>
     </div>
     <div class="col-lg-12">
       <span class="pf-title"><%= t ".benefit" %></span>
+      <span class="required-field"></span>
       <div class="pf-field">
         <%= f.text_area :benefit %>
       </div>
     </div>
     <div class="col-lg-12">
       <span class="pf-title"><%= t ".expire_at" %></span>
+      <span class="required-field"></span>
       <div class="pf-field">
         <%= f.date_field :expire_at %>
       </div>

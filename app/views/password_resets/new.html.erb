@@ -4,6 +4,7 @@
     <%= form_for :password_reset, url: password_resets_path do |f| %>
       <div class="pf-title">
         <%= t ".email" %>
+        <span class="required-field"></span>
       </div>
       <%= f.email_field :email, class: "form-control" %>
       <%= f.submit t(".submit"), class: "btn btn-primary" %>

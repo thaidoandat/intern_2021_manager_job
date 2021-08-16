@@ -3,7 +3,12 @@
   <div class="row">
     <div class="col-lg-4">
       <div class="ava-profile">
-        <%= image_tag Settings.image.company_avatar %>
+        <%= show_avatar @company.avatar %>
+        <span class="avatar">
+          <%= f.fields_for :account do |ff| %>
+            <%= ff.file_field :avatar %>
+          <% end %>
+        </span>
       </div>
     </div>
 
@@ -12,6 +17,7 @@
         <div class="col-lg-5">
           <div class="pf-title">
             <%= t ".name" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= f.text_field :name %>
@@ -21,6 +27,7 @@
         <div class="col-lg-6">
           <div class="pf-title">
             <%= t ".phone" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= f.text_field :phone_number %>
@@ -32,6 +39,7 @@
         <div class="col-lg-11">
           <div class="pf-title">
             <%= t ".email" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= text_field_tag :email, @current_account.email, readonly: true %>
@@ -43,6 +51,7 @@
         <div class="col-lg-11">
           <div class="pf-title">
             <%= t ".address" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= f.text_field :address %>
@@ -54,6 +63,7 @@
         <div class="col-lg-11">
           <div class="pf-title">
             <%= t ".description" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field company-description">
             <%= f.text_area :description %>

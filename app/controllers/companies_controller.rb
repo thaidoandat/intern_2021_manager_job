@@ -23,7 +23,7 @@ class CompaniesController < ApplicationController
   def edit; end
 
   def update
-    if @company.update company_params
+    if @company.update company_update_params
       flash[:success] = t "controller.profile_updated"
       redirect_to @company
     else
@@ -42,6 +42,10 @@ class CompaniesController < ApplicationController
 
   def company_params
     params.require(:company).permit Company::COMPANY_PARAMS
+  end
+
+  def company_update_params
+    params.require(:company).permit Company::UPDATE_PARAMS
   end
 
   def correct_company

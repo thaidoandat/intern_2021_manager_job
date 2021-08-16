@@ -23,7 +23,7 @@
           <div class="row">
             <div class="col-lg-4">
               <div class="ava-profile">
-                <%= image_tag Settings.image.user_avatar %>
+                <%= show_avatar @user.avatar %>
               </div>
               <div class="user-info">
                 <h1 class="info-name"><%= @user.name %></h1>
@@ -96,24 +96,29 @@
       </div>
       <div class="row row-edit-button">
         <div class="col-lg-12">
-          <%= link_to edit_user_path do%>
-            <button>
-              <%= t ".edit_btn" %>
-            </button>
+          <% if current_account.user == @user %>
+            <%= link_to edit_user_path do%>
+              <button>
+                <%= t ".edit_btn" %>
+              </button>
+            <% end %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="title-applied-job">
-  <div class="container">
-    <div class="pf-title pf-title-bold">
-      <h3 class="text-applied-job">
-        <%= t(".applied_job") %>
-      </h3>
+
+<% if current_account.user == @user %>
+  <section class="title-applied-job">
+    <div class="container">
+      <div class="pf-title pf-title-bold">
+        <h3 class="text-applied-job">
+          <%= t(".applied_job") %>
+        </h3>
+      </div>
+      <%= render @jobs %>
+      <%= paginate @jobs %>
     </div>
-    <%= render @jobs %>
-    <%= paginate @jobs %>
-  </div>
-</section>
+  </section>
+<% end %>

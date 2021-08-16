@@ -14,8 +14,8 @@ class UsersController < ApplicationController
       flash[:success] = t "controller.provide_info_success"
       redirect_to root_path
     else
-      flash[:warning] = t "controller.provide_info_failed"
-      render :new
+      flash[:danger] = t "controller.provide_info_failed"
+      redirect_to new_user_path
     end
   end
 
@@ -24,7 +24,9 @@ class UsersController < ApplicationController
                  .per Settings.max_items_per_page
   end
 
-  def edit; end
+  def edit
+    return redirect_to new_user_path unless @user.user_info
+  end
 
   def update
     if @user.update user_update_params
@@ -54,7 +56,7 @@ class UsersController < ApplicationController
   end
 
   def user_update_params
-    params.require(:user).permit UserApplyJob::APPLY_PARAMS
+    params.require(:user).permit User::UPDATE_PARAMS
   end
 
   def correct_user
