@@ -38,6 +38,15 @@ vi:
       dn_jobs: "Việc làm ở Đà Nẵng"
       hcm_jobs: "Việc làm ở TP. HCM"
       copy_rights: "© 2018 Jobhunt All rights reserved. Thiết kế bởi Creative Layers"
+    admin_sessions_footer:
+      creative_tim: "Creative Tim"
+    admin:
+      title: "Trang quản trị"
+    admin_topnav:
+      search: "Tìm kiếm"
+    admin_sidenav:
+      companies: "Các công ty"
+      log_out: "Đăng xuất"
   static_pages:
     home:
       company_list: "Danh sách công ty"
@@ -95,6 +104,8 @@ vi:
       small_intro: "Tìm việc, cơ hội nghề nghiệp dễ dàng"
       browse_job_by: "Tìm việc bằng:"
       filter: "Bộ lọc"
+      job_title: "Tên công việc"
+      search: "Tìm kiếm"
   accounts:
     new:
       register: "Đăng kí"
@@ -314,3 +325,22 @@ vi:
         password_confirmation: "Xác nhận mật khẩu"
       check_your_info: "Check your information"
       will_affect_profile: "Change this information will affect your profile"
+  admin:
+    index:
+      welcome: "Chào mừng bạn đến với trang quản trị!"
+  admin_sessions:
+    new:
+      welcome: "Chào mừng bạn đến với trang quản trị!"
+      admin_sign_in: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      log_in: "Đăng nhập"
+  admin_companies:
+    index:
+      table: "Bảng"
+      phone_number: "Số điện thoại"
+      name: "Tên"
+      address: "Địa chỉ"
+      number_of_jobs: "Số công việc"
+    admin_companies_header:
+      list_companies: "Danh sách công ty"

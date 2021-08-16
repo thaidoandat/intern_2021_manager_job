@@ -91,6 +91,7 @@ image:
   ch_play: "resource/dw2.png"
   background_search: "resource/vector-1.png"
   company_logo: "resource/l2.png"
+  admin_logo: "resource/admin_logo.png"
 avatar:
   default: "default_avatar.png"
   default_link: "app/assets/images/default_avatar.png"

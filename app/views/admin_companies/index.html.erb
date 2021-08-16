@@ -1,0 +1,33 @@
+<%= render "admin_companies/admin_companies_header" %>
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header border-0">
+          <h3 class="mb-0"><%= t ".table" %></h3>
+        </div>
+        <!-- Light table -->
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col" class="sort" data-sort="name"><%= t ".name" %></th>
+                <th scope="col" class="sort" data-sort="budget"><%= t ".address" %></th>
+                <th scope="col" class="sort" data-sort="status"><%= t ".number_of_jobs" %></th>
+                <th scope="col"><%= t ".phone_number" %></th>
+              </tr>
+            </thead>
+            <tbody class="list">
+              <%= render partial: "admin_companies/admin_company", collection: @admin_companies, as: :admin_company %>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div class="paginate-mode">
+        <%= paginate @admin_companies, theme: "twitter-bootstrap-3", class: "paginate-content" %>
+      </div>
+    </div>
+  </div>
+</div>

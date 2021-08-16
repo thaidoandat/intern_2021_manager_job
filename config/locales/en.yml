@@ -38,6 +38,15 @@ en:
       dn_jobs: "Danang Jobs"
       hcm_jobs: "TP Hochiminh Jobs"
       copy_rights: "© 2018 Jobhunt All rights reserved. Design by Creative Layers"
+    admin_sessions_footer:
+      creative_tim: "Creative Tim"
+    admin:
+      title: "Admin page"
+    admin_topnav:
+      company_name: "Company name"
+      log_out: "Log out"
+    admin_sidenav:
+      companies: "Companies"
   static_pages:
     home:
       company_list: "Company list"
@@ -95,6 +104,8 @@ en:
       small_intro: "Find Jobs, Employment & Career Opportunities"
       browse_job_by: "Browse job offers by"
       filter: "Filter"
+      job_title: "Job title"
+      search: "Search"
   accounts:
     new:
       register: "Register"
@@ -321,3 +332,22 @@ en:
             avatar:
               invalid_format_image: "must be a valid image format"
               should_smaller: "should be less than 5MB"
+  admin:
+    index:
+      welcome: "Welcome to admin page!"
+  admin_sessions:
+    new:
+      welcome: "Welcome to admin page!"
+      admin_sign_in: "Admin Sign in"
+      email: "Email"
+      password: "Password"
+      log_in: "Log in"
+  admin_companies:
+    index:
+      table: "Table"
+      phone_number: "Phone number"
+      name: "Name"
+      address: "Address"
+      number_of_jobs: "Number of jobs"
+    admin_companies_header:
+      list_companies: "List companies"

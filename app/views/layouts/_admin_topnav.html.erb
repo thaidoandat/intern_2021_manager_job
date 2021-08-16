@@ -1,0 +1,47 @@
+<nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Search form -->
+      <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
+        <div class="form-group mb-0">
+          <div class="input-group input-group-alternative input-group-merge">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-search"></i></span>
+            </div>
+            <%= form_tag admin_companies_path, method: :get do %>
+              <%= text_field_tag :name, nil, placeholder: t(".company_name"), class: "form-control" %>
+            <% end %>
+          </div>
+        </div>
+      </form>
+      <ul class="navbar-nav align-items-center  ml-md-auto ">
+        <li class="nav-item d-xl-none">
+          <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item d-sm-none">
+          <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
+            <i class="ni ni-zoom-split-in"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+        <li class="nav-item dropdown">
+          <%= link_to admin_logout_path, method: :delete, class:"nav-link pr-0" do %>
+            <div class="media align-items-center">
+              <div class="media-body  ml-2  d-none d-lg-block">
+                <span class="mb-0 text-sm  font-weight-bold"><i class="fa fa-sign-out"></i></span>
+                <span class="mb-0 text-sm  font-weight-bold"><%= t ".log_out" %></span>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

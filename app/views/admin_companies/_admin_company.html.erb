@@ -1,0 +1,22 @@
+<tr>
+  <th scope="row">
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= admin_company.name %></span>
+      </div>
+    </div>
+  </th>
+  <td class="budget">
+    <%= admin_company.address %>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= admin_company.jobs.count %></span>
+    </span>
+  </td>
+  <td>
+    <div>
+      <%= admin_company.phone_number %>
+    </div>
+  </td>
+</tr>

@@ -41,7 +41,7 @@ class Job < ApplicationRecord
       .having("COUNT(job_categories.category_id) = ?", category_ids.count)
       .distinct
   end)
-
+  scope :by_name, ->(name){where("name Like ?", "%#{name}%")}
   delegate :email, :name, :address, :phone_number, to: :company, prefix: true
 
   def save_job_categories categories

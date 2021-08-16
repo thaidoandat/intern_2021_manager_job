@@ -1,0 +1,25 @@
+.welcome {
+  margin: 60px;
+  position: relative;
+  font-size: 10vw;
+  text-transform: uppercase;
+  background-clip: text;
+  background: -webkit-linear-gradient(#009fff, #ec2f4b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paginate-mode {
+  padding: 50px auto;
+}
+
+.form-login-admin {
+  margin: 10px;
+}
+
+.admin-login {
+  padding: 10px 5px;
+  border-radius: 10px;
+  width: 100%;
+  border: solid;
+}
