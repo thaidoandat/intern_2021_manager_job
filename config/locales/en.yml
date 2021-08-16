@@ -134,6 +134,9 @@ en:
       phone_number: "Phone number"
       edit_profile: "Edit Profile"
       create_new_job: "Create New Job"
+      expire_at: "Expire at"
+      candidates: "Candidates"
+      job_name: "Job name"
     edit:
       update_profile: "Update Profile"
       can_change: "You can change your information here"
@@ -186,6 +189,7 @@ en:
       applied: "Applied"
       apply_job: "Apply Job"
       view: "View"
+      detail: "Detail"
     not_found: "Job not found"
     index:
       job_count: "%{num} Jobs & Vacancies"

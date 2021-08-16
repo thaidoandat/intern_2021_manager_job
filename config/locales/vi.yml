@@ -134,6 +134,9 @@ vi:
       phone_number: "Số điện thoại"
       edit_profile: "Chỉnh sửa"
       create_new_job: "Create New Job"
+      expire_at: "Hết hạn vào"
+      candidates: "Số ứng viên"
+      job_name: "Tên công việc"
     edit:
       update_profile: "Cập nhật trang công ty"
       can_change: "Bạn có thể chỉnh sửa thông tin công ty tại đây"
@@ -186,6 +189,7 @@ vi:
       applied: "Đã ứng tuyển"
       apply_job: "Ứng tuyển"
       view: "Xem"
+      detail: "Chi tiết"
     not_found: "Không tìm thấy công việc"
     index:
       job_count: "%{num} Việc làm"

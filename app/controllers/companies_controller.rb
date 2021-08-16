@@ -16,7 +16,8 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @jobs = @company.jobs.newest.page(params[:page])
+    @jobs = @company.jobs.by_name(params[:name])
+                    .newest.page(params[:page])
                     .per Settings.companies.page.max
   end
 
