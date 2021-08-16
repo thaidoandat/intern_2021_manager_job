@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   USER_PARAMS = %i(name address phone_number gender birthday).freeze
-  UPDATE_PARAMS = [UserApplyJob::APPLY_PARAMS,
+  UPDATE_PARAMS = [USER_PARAMS,
+                   user_info_attributes: UserInfo::USER_INFO_PARAMS,
                    account_attributes: [:avatar]].freeze
   GENDER_HASH = {men: 0, women: 1, other: 2}.freeze
 

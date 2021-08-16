@@ -7,6 +7,8 @@ class Company < ApplicationRecord
 
   accepts_nested_attributes_for :account, update_only: true
 
+  scope :by_name, ->(name){where("name Like ?", "%#{name}%")}
+
   validates :account_id, presence: true
   validates :name, presence: true, uniqueness: {case_sensitive: false},
             length: {minimum: Settings.companies.name.length.min,

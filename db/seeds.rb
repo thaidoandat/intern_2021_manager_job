@@ -73,3 +73,10 @@ end
   category = Faker::Job.field + "alsbds"
   Category.create!(name: category)
 end
+
+Account.create!(email: "admin-itviec@gmail.com",
+                password: "admin123",
+                password_confirmation: "admin123",
+                activated: true,
+                role: "admin",
+                activated_at: Time.zone.now)

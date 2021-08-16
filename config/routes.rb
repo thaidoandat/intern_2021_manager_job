@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    delete "/admin_logout", to: "admin_sessions#destroy"
+
+    resources :admin, only: :index
+    resources :admin_companies, only: :index
+    resources :admin_sessions, only: %i(new create)
     resources :jobs
     resources :jobs do
       member do

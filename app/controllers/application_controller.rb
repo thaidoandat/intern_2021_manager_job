@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
+  rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
+
+  def handle_record_not_found
+    flash[:danger] = t "controller.user_not_found"
+    redirect_to root_path
+  end
+
   private
 
   def set_locale

@@ -4,8 +4,13 @@ class JobsController < ApplicationController
   before_action :correct_company, only: %i(edit update destroy)
 
   def index
-    @jobs = Job.newest.includes(:company).page(params[:page])
-               .per Settings.jobs.max_items_per_page
+    @jobs = if params[:commit]
+              Job.search_by(search_params).page(params[:page])
+                 .per Settings.jobs.max_items_per_page
+            else
+              Job.newest.includes(:company).page(params[:page])
+                 .per Settings.jobs.max_items_per_page
+            end
   end
 
   def new
@@ -74,5 +79,11 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit Job::JOB_PARAMS
+  end
+
+  def search_params
+    params[:companies] = params[:companies].keys if params.key? :companies
+    params[:categories] = params[:categories].keys if params.key? :categories
+    params.permit [:salary_id, companies: [], categories: []]
   end
 end
