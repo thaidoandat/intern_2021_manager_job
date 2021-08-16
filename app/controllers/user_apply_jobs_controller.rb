@@ -17,7 +17,7 @@ class UserApplyJobsController < ApplicationController
   end
 
   def show
-    @job = Job.find_by id: params[:id]
+    @job = Job.includes(:company).find_by id: params[:id]
     @user_apply_jobs = @job.user_apply_jobs.includes(:user)
   end
 

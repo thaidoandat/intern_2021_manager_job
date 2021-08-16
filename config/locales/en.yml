@@ -228,9 +228,11 @@ en:
       post_job: "Post New Job"
       logout: "Logout"
     job_filter:
-      date_post: "Date Posted"
+      company: "Company"
       job_category: "Job Category"
       salary: "Offered Salary"
+      submit_text: "Search"
+      all: "All"
   user_apply_jobs:
     form_apply:
       name: "Name:"
@@ -250,6 +252,7 @@ en:
       will_affect_profile: "Change this information will affect your profile"
     show:
       list_candidates: "List Candidates"
+      home: "Home"
     user_apply_job:
       accept: "Accept"
       accepted: "Accepted"

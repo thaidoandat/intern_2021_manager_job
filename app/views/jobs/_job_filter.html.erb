@@ -1,23 +1,40 @@
-<div class="widget border">
-  <h3 class="sb-title open"><%= t ".date_post" %></h3>
-  <div class="posted_widget">
-  </div>
-</div>
-<div class="widget border">
-  <h3 class="sb-title open"><%= t ".job_category" %></h3>
-  <div class="type_widget">
-    <% Category.all.each do |item| %>
-      <p class="flchek">
-        <%= check_box_tag item.id %>
-        <%= label_tag item.id, item.name %>
-      </p>
-    <% end %>
-  </div>
-</div>
-<div class="widget border">
-  <h3 class="sb-title closed"><%= t ".salary" %></h3>
-  <div class="specialism_widget">
-    <div class="simple-checkbox">
+<%= form_tag jobs_path, remote: true, method: :get do %>
+  <div class="widget border">
+    <h3 class="sb-title open"><%= t ".company" %></h3>
+    <div class="posted_widget">
+      <% Company.all.each do |item| %>
+        <p class="flchek">
+          <%= check_box_tag "companies[#{item.id}]", item.id %>
+          <%= label_tag "companies[#{item.id}]", item.name %>
+        </p>
+      <% end %>
     </div>
   </div>
-</div>
+  <div class="widget border">
+    <h3 class="sb-title open"><%= t ".job_category" %></h3>
+    <div class="type_widget">
+      <% Category.all.each do |item| %>
+        <p class="flchek">
+          <%= check_box_tag "categories[#{item.id}]" %>
+          <%= label_tag "categories[#{item.id}]", item.name %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <div class="widget border">
+    <h3 class="sb-title open"><%= t ".salary" %></h3>
+    <div class="posted_widget">
+      <p class="flchek">
+        <%= radio_button_tag "salary_id", "", checked: true %>
+        <%= label_tag "salary_id_", t(".all") %>
+      </p>
+      <% Salary.ascending.each do |item| %>
+        <p class="flchek">
+          <%= radio_button_tag "salary_id", item.id %>
+          <%= label_tag "salary_id_#{item.id}", "#{item.min_salary} - #{item.max_salary}" %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <%= submit_tag t ".submit_text" %>
+<% end %>
