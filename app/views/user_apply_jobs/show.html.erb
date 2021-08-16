@@ -2,7 +2,28 @@
   <div class="block">
     <div class="container">
       <div class="row">
-        <h3><%= t "list-candidates" %></h3>
+        <section>
+          <div class="block no-padding  gray">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="inner2">
+                    <div class="inner-title2">
+                      <h3><%= t "list-candidates" %></h3>
+                    </div>
+                    <div class="page-breacrumbs">
+                      <ul class="breadcrumbs">
+                        <li><%= link_to t(".home"), root_path %></li>
+                        <li><%= link_to @job.company.name, @job.company %></li>
+                        <li><%= link_to @job.name, @job %></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <%= render partial: "user_apply_jobs/user_apply_job",
           collection: @user_apply_jobs, as: :user_apply_job %>
       </div>

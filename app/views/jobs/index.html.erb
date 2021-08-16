@@ -2,18 +2,18 @@
   <div class="block remove-top">
     <div class="container">
       <div class="row no-gape">
-        <aside class="col-lg-3 column">
+        <aside class="col-lg-3 column" id="job-filter">
           <%= render "jobs/job_filter" %>
         </aside>
         <div class="col-lg-1 column"></div>
         <div class="col-lg-8 column">
           <div class="modrn-joblist np">
-            <h5 class="job-count"><%= t ".job_count", num: @jobs.count %></h5>
+            <h5 class="job-count"><%= t ".job_count", num: @jobs.uniq.count %></h5>
             <div class="job-list-modern">
               <div class="job-listings-sec" id="jobs-list">
                 <%= render @jobs %>
               </div>
-              <div class="pagination" id="jobs_paginator">
+              <div class="pagination" id="jobs-paginator">
                 <%= paginate @jobs, remote: true, theme: "twitter-bootstrap-3" %>
               </div><!-- Pagination -->
             </div>

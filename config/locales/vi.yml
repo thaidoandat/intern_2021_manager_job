@@ -228,9 +228,11 @@ vi:
       post_job: "Post New Job"
       logout: "Logout"
     job_filter:
-      date_post: "Date Posted"
+      company: "Company"
       job_category: "Job Category"
       salary: "Offered Salary"
+      submit_text: "Search"
+      all: "All"
   user_apply_jobs:
     form_apply:
       name: "Tên:"
@@ -250,6 +252,7 @@ vi:
       will_affect_profile: "Thay đổi thông tin sẽ ảnh hưởng trực tiếp tới hồ sơ của bạn"
     show:
       list_candidates: "Danh sách ứng viên"
+      home: "Home"
     user_apply_job:
       accept: "Chấp nhận"
       accepted: "Đã chấp nhận"
