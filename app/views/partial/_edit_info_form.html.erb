@@ -17,6 +17,7 @@
         <div class="col-lg-5">
           <div class="pf-title">
             <%= t ".name" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= f.text_field :name %>
@@ -26,6 +27,7 @@
         <div class="col-lg-6">
           <div class="pf-title">
             <%= t ".email" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= text_field_tag :email, @current_account.email, readonly: true %>
@@ -37,6 +39,7 @@
         <div class="col-lg-4">
           <div class="pf-title">
             <%= t ".phone" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= f.text_field :phone_number %>
@@ -46,6 +49,7 @@
         <div class="col-lg-3">
           <span class="pf-title">
             <%= t ".gender" %>
+            <span class="required-field"></span>
           </span>
           <div class="pf-field">
             <%= f.select :gender, gender_options %>
@@ -55,6 +59,7 @@
         <div class="col-lg-4">
           <div class="pf-title">
             <%= t ".birthday" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= f.date_field :birthday %>
@@ -66,6 +71,7 @@
         <div class="col-lg-11">
           <div class="pf-title">
             <%= t ".address" %>
+            <span class="required-field"></span>
           </div>
           <div class="pf-field">
             <%= f.text_field :address %>

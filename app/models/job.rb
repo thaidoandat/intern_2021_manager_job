@@ -7,6 +7,8 @@ class Job < ApplicationRecord
   has_many :users, through: :user_apply_jobs
   has_many :job_categories, dependent: :destroy
   has_many :categories, through: :job_categories
+  has_many :send_notifications, class_name: Notification.name,
+                  foreign_key: :sender_id, dependent: :destroy
 
   validates :company_id, presence: true
   validates :name, presence: true,
@@ -42,7 +44,8 @@ class Job < ApplicationRecord
       .distinct
   end)
   scope :by_name, ->(name){where("name Like ?", "%#{name}%")}
-  delegate :email, :name, :address, :phone_number, to: :company, prefix: true
+  delegate :email, :name, :address, :phone_number, :account, to: :company,
+           prefix: true
 
   def save_job_categories categories
     categories.each do |key, value|
