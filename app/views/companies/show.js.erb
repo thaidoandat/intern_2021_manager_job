@@ -1,0 +1,9 @@
+$("#company-jobs-user").html("<%= j render(@jobs) %>");
+$("#paginate-company-jobs-user").html(
+  "<%= j paginate(@jobs, remote: true, theme: 'twitter-bootstrap-3') %>"
+)
+
+$("#company-jobs").html("<%= j render(partial: 'company_jobs/company_job', collection: @jobs, as: :job) %>");
+$("#paginate-company-jobs").html(
+  "<%= j paginate(@jobs, remote: true, theme: 'twitter-bootstrap-3') %>"
+)

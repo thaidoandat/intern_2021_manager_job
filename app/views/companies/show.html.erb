@@ -33,7 +33,7 @@
                       </div>
                     </div>
                   </div>
-                  <% if current_account.company == @company %>
+                  <% if current_account&.company? %>
                     <div class="col-lg-2">
                       <div class="emply-btns">
                         <%= link_to t(".edit_profile"), edit_company_path, class: "edit-profile" %>
@@ -54,8 +54,37 @@
                         <%= @company.description %>
                       </div>
                     </div>
-                    <%= render @jobs %>
-                    <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+                    <div class="search-job-in-company">
+                      <%= form_tag company_path, remote: true, method: :get do %>
+                        <span><i class="fa fa-search search-job-in-company-part"></i></span>
+                        <%= text_field_tag :name, nil, placeholder: t(".job_name"), class: "search-job-in-company-part" %>
+                      <% end %>
+                    </div>
+                    <% if !logged_in? || current_account.user? %>
+                      <div id="company-jobs-user">
+                        <%= render @jobs %>
+                      </div>
+                      <div id="paginate-company-jobs-user">
+                        <%= paginate @jobs, remote: true, theme: "twitter-bootstrap-3" %>
+                      </div>
+                    <% elsif current_account&.company? %>
+                      <table class="table table-striped table-hover">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col" class="tb-title"><%= t ".name" %></th>
+                            <th scope="col" class="tb-title"><%= t ".expire_at" %></th>
+                            <th scope="col" class="tb-title"><%= t ".candidates" %></th>
+                            <th scope="col" class="tb-title"></th>
+                          </tr>
+                        </thead>
+                        <tbody id="company-jobs">
+                          <%= render partial: "company_jobs/company_job", collection: @jobs, as: :job %>
+                        </tbody>
+                      </table>
+                      <div id="paginate-company-jobs">
+                        <%= paginate @jobs, remote: true, theme: "twitter-bootstrap-3" %>
+                      </div>
+                    <% end %>
                   </div>
                   <div class="col-lg-4 column">
                     <div class="job-overview">

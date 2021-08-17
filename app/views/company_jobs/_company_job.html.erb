@@ -1,0 +1,6 @@
+<tr>
+  <th scope="row"><%= job.name %></th>
+  <td><%= job.expire_at.strftime Settings.date_format %></td>
+  <td><%= link_to job.user_apply_jobs.count, user_apply_job_path(job), class: "to-link" %></td>
+  <td><%= link_to t(".detail"), job_path(job), class: "to-link" %></td>
+</tr>
