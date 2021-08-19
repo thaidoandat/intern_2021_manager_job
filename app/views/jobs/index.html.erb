@@ -8,7 +8,7 @@
         <div class="col-lg-1 column"></div>
         <div class="col-lg-8 column">
           <div class="modrn-joblist np">
-            <h5 class="job-count"><%= t ".job_count", num: @jobs.uniq.count %></h5>
+            <h5 class="job-count"><%= t ".job_count", num: @jobs.total_count %></h5>
             <div class="job-list-modern">
               <div class="job-listings-sec" id="jobs-list">
                 <%= render @jobs %>

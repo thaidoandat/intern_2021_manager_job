@@ -34,6 +34,7 @@ class User < ApplicationRecord
 
   def apply job
     jobs << job
+    user_apply_jobs.find_by(job_id: job.id).send_noti :apply
   end
 
   def apply? job_id

@@ -1,0 +1,11 @@
+<% if notification.not_seen? %>
+  <li class="noti-new">
+<% else %>
+  <li class="noti-seen">
+<% end %>
+
+  <%= link_to t(get_content notification), notification.sender %>
+  <span>
+    <%= notification.created_at.strftime Settings.noti_time_format %>
+  </span>
+</li>

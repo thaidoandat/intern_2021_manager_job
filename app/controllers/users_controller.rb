@@ -30,10 +30,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update user_update_params
-      flash[:success] = t ".profile_updated"
+      flash[:success] = t "controller.profile_updated"
       redirect_to current_owner
     else
-      flash[:danger] = t ".profile_update_failed"
+      flash[:danger] = t "controller.profile_update_failed"
       render :edit
     end
   end
@@ -70,7 +70,7 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     return if @user
 
-    flash[:warning] = t ".user_not_found"
+    flash[:warning] = t "controller.user_not_found"
     redirect_to root_path
   end
 end

@@ -242,3 +242,89 @@ input[type="checkbox"] {
 .search-job-in-company-part {
   margin: 0px 3px;
 }
+
+.basic-search-btn {
+  height: 100%;
+  width: 100%;
+  margin: 0 !important;
+
+}
+
+.filter-search-btn {
+  height: 100%;
+  width: 100%;
+  margin-top: 20px !important;
+}
+
+.behind-noti {
+  z-index: -1 !important;
+}
+
+.pagination {
+  margin-top: 25px;
+}
+
+.notification {
+  color: $white;
+  top: 10px;
+  left: 10px;
+
+  i {
+    font-size: 25px;
+  }
+
+  #notification-counter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    background-color: $red;
+    color: white;
+  }
+
+  ul {
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-width: 250px;
+
+    li {
+      padding: 10px 15px;
+      font-size: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:before {
+        content : "";
+        position: absolute;
+        left    : 5%;
+        bottom  : 0;
+        height  : 1px;
+        width   : 90%;
+        border-bottom:1px solid $gray;
+      }
+
+      a {
+        color: $black !important;
+        font-size: 15px !important;
+        margin: 0px !important;
+        padding: 0px !important;
+      }
+
+      span {
+        color: $gray;
+        font-size: 10px;
+        float: right;
+        font-style: italic;
+      }
+    }
+
+    .noti-new {
+      background-color: $light-blue;
+    }
+  }
+}

@@ -66,7 +66,7 @@ jobs:
   name:
     length:
       min: 6
-      max: 50
+      max: 1000
   description:
     length:
       min: 6
@@ -107,3 +107,5 @@ number_field:
   step: 1
   default_value: 0
 max_image_size: 5
+noti_time_format: "%d %b. %Y"
+max_notifications: 20
