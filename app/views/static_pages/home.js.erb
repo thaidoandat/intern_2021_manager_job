@@ -1,5 +1,5 @@
-$('#companies-list').html('<%= j render(@companies) %>');
-$('#companies_paginator').html('<%= j paginate(@companies, remote: true, :param_name => 'company_page', theme: 'twitter-bootstrap-3') %>');
+$("#companies-list").html("<%= j render(@companies) %>");
+$("#companies_paginator").html("<%= j paginate(@companies, remote: true, param_name: 'company_page', theme: 'twitter-bootstrap-3') %>");
 
-$('#jobs-list').html('<%= j render(@jobs) %>');
-$('#jobs_paginator').html('<%= j paginate(@jobs, remote: true, :param_name => 'job_page', theme: 'twitter-bootstrap-3') %>');
+$("#jobs-list").html("<%= j render(@jobs) %>");
+$("#jobs_paginator").html("<%= j paginate(@jobs, remote: true, param_name: 'job_page', theme: 'twitter-bootstrap-3') %>");

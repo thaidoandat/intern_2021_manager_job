@@ -18,4 +18,9 @@ module ApplicationHelper
       image_tag Settings.avatar.default
     end
   end
+
+  def get_notifications
+    current_account.receiver_notifications
+                   .latest_noti(Settings.max_notifications).includes :sender
+  end
 end

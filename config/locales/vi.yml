@@ -24,6 +24,7 @@ vi:
       profile: "Hồ Sơ"
       categories: "Danh mục"
       jobs: "Công việc"
+      no_notification: "Bạn không có thông báo nào."
     footer:
       address: "Collin Street West, Victor 8007, Australia."
       phone: "+1 246-345-0695"
@@ -99,6 +100,12 @@ vi:
       birthday: "Ngày sinh"
       address: "Địa chỉ"
       update: "Cập nhật"
+    info_apply_form:
+      objective: "Mục tiêu"
+      work_experiences: "Kinh nghiệm làm việc"
+      educations: "Bằng cấp"
+      skills: "Kĩ năng"
+      interests: "Sở thích"
     search_basic:
       intro: "Đây là cách dễ nhất để bạn tìm việc"
       small_intro: "Tìm việc, cơ hội nghề nghiệp dễ dàng"
@@ -137,11 +144,11 @@ vi:
       expire_at: "Hết hạn vào"
       candidates: "Số ứng viên"
       job_name: "Tên công việc"
+      about: "Xem thông tin"
     edit:
       update_profile: "Cập nhật trang công ty"
       can_change: "Bạn có thể chỉnh sửa thông tin công ty tại đây"
     edit_company_form:
-      change_avatar: "Thay đổi ảnh đại diện"
       name: "Tên"
       email: "Email"
       phone: "Số điện thoại"
@@ -189,7 +196,7 @@ vi:
       applied: "Đã ứng tuyển"
       apply_job: "Ứng tuyển"
       view: "Xem"
-      detail: "Chi tiết"
+      detail: "Xem chi tiết"
     not_found: "Không tìm thấy công việc"
     index:
       job_count: "%{num} Việc làm"
@@ -221,6 +228,9 @@ vi:
     update:
       success: "Công việc đã được cập nhật"
       failure: "Cập nhật công việc thất bại"
+    destroy:
+      success: "Đã xóa việc làm"
+      failure: "Xóa việc làm thất bại"
     job_form:
       name: "Job Title"
       description: "Job Description"
@@ -234,10 +244,9 @@ vi:
       placeholder:
         name: "Enter Job Title"
         description: "Describe about job"
-    job:
-      detail: "View Detail"
     side_bar:
       profile: "My Profile"
+      company_profile: "Thông tin công ty"
       manage_jobs: "Manage Jobs"
       edit_profile: "Edit Profile"
       post_job: "Post New Job"
@@ -329,6 +338,13 @@ vi:
         password_confirmation: "Xác nhận mật khẩu"
       check_your_info: "Check your information"
       will_affect_profile: "Change this information will affect your profile"
+    errors:
+      models:
+        account:
+          attributes:
+            avatar:
+              invalid_format_image: "File không đúng định dạng hỉnh ảnh"
+              should_smaller: "File không thể lớn hơn 5MB"
   admin:
     index:
       welcome: "Chào mừng bạn đến với trang quản trị!"
@@ -348,3 +364,7 @@ vi:
       number_of_jobs: "Số công việc"
     admin_companies_header:
       list_companies: "Danh sách công ty"
+  noti:
+    apply: "%{name} ứng tuyển vào 1 job của bạn."
+    accepted: "%{name} đã chấp nhận đơn ứng tuyển của bạn."
+    denied: "%{name} đã từ chối đơn ứng tuyển của bạn."

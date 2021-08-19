@@ -7,7 +7,7 @@ en:
     profile_updated: "Profile updated"
     profile_update_failed: "Profile update failed"
     provide_info_success: "Provide information successfully"
-    provide_info_fail: "Provide information failed"
+    provide_info_failed: "Provide information failed"
     no_permission: "You don't have permission to access!"
   layouts:
     header:
@@ -24,6 +24,7 @@ en:
       profile: "Profile"
       categories: "Job Categories"
       jobs: "Jobs"
+      no_notification: "You have no notifications."
     footer:
       address: "Collin Street West, Victor 8007, Australia."
       phone: "+1 246-345-0695"
@@ -99,6 +100,12 @@ en:
       birthday: "Birthday"
       address: "Address"
       update: "Update"
+    info_apply_form:
+      objective: "Objective"
+      work_experiences: "Work experiences"
+      educations: "Educations"
+      skills: "Skills"
+      interests: "Interests"
     search_basic:
       intro: "The Easiest Way to Get Your New Job"
       small_intro: "Find Jobs, Employment & Career Opportunities"
@@ -137,11 +144,11 @@ en:
       expire_at: "Expire at"
       candidates: "Candidates"
       job_name: "Job name"
+      about: "About"
     edit:
       update_profile: "Update Profile"
       can_change: "You can change your information here"
     edit_company_form:
-      change_avatar: "Change avatar"
       name: "Name"
       email: "Email"
       phone: "Phone number"
@@ -189,7 +196,7 @@ en:
       applied: "Applied"
       apply_job: "Apply Job"
       view: "View"
-      detail: "Detail"
+      detail: "View Detail"
     not_found: "Job not found"
     index:
       job_count: "%{num} Jobs & Vacancies"
@@ -221,6 +228,9 @@ en:
     update:
       success: "Job has been updated"
       failure: "Update job fail"
+    destroy:
+      success: "Job has been destroyed"
+      failure: "Job destroy fail"
     job_form:
       name: "Job Title"
       description: "Job Description"
@@ -234,10 +244,9 @@ en:
       placeholder:
         name: "Enter Job Title"
         description: "Describe about job"
-    job:
-      detail: "View Detail"
     side_bar:
       profile: "My Profile"
+      company_profile: "Company Profile"
       manage_jobs: "Manage Jobs"
       edit_profile: "Edit Profile"
       post_job: "Post New Job"
@@ -355,3 +364,7 @@ en:
       number_of_jobs: "Number of jobs"
     admin_companies_header:
       list_companies: "List companies"
+  noti:
+    apply: "%{name} has applied for a job."
+    accepted: "%{name} has accepted you for a job."
+    denied: "%{name} has denied you for a job."

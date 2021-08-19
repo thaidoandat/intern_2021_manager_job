@@ -10,6 +10,8 @@ class Account < ApplicationRecord
   has_one :user, dependent: :destroy
   has_one :company, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
+  has_many :receiver_notifications, class_name: Notification.name,
+                        foreign_key: :receiver_id, dependent: :destroy
 
   validates :email, presence: true, uniqueness: {case_sensitive: false},
             length: {minimum: Settings.accounts.email.length.min,
@@ -93,10 +95,8 @@ class Account < ApplicationRecord
   def set_default_avatar
     return if avatar.attached?
 
-    avatar.attach(io: File.open(
-      Rails.root.join(Settings.avatar.default_link),
-      filename: Settings.avatar.default,
-      content_type: Settings.avatar.default_type
-    ))
+    avatar.attach(io: File.open(Rails.root.join(Settings.avatar.default_link)),
+                  filename: Settings.avatar.default,
+                  content_type: Settings.avatar.default_type)
   end
 end

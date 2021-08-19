@@ -52,6 +52,26 @@
               </li>
             </ul>
           </li>
+
+          <!-- notification -->
+          <% if logged_in? %>
+            <li class="menu-item-has-children notification">
+              <i class="far fa-bell"></i>
+              <span id="notification-counter">
+                <%= current_account.receiver_notifications.not_seen.count %>
+              </span>
+                <ul id="notification-list">
+                  <% if current_account.receiver_notifications.any? %>
+                    <%= render partial: "notifications/notification", collection: get_notifications, as: :notification %>
+                  <% else %>
+                    <li>
+                      <%= t ".no_notification" %>
+                    </li>
+                  <% end %>
+                </ul>
+            </li>
+          <% end %>
+
         </ul>
       </nav><!-- Menus -->
     </div>
