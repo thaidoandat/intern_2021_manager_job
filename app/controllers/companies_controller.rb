@@ -1,7 +1,6 @@
 class CompaniesController < ApplicationController
-  before_action :check_role_company, only: %i(new create)
+  before_action :check_role_company, only: %i(new create edit update)
   before_action :load_company, except: %i(new create)
-  before_action :correct_company, only: %i(edit update)
 
   def new
     @company = current_account.build_company
@@ -47,13 +46,6 @@ class CompaniesController < ApplicationController
 
   def company_update_params
     params.require(:company).permit Company::UPDATE_PARAMS
-  end
-
-  def correct_company
-    return if current_owner == @company
-
-    redirect_to root_path
-    flash[:warning] = t "controller.no_permission"
   end
 
   def load_company
