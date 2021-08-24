@@ -47,7 +47,7 @@ class JobsController < ApplicationController
     if @job.destroy
       flash[:success] = t "jobs.destroy.success"
     else
-      flash[:failure] = t "jobs.destroy.failure"
+      flash[:danger] = t "jobs.destroy.failure"
     end
     redirect_to @company
   end

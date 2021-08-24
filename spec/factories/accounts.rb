@@ -3,9 +3,7 @@ FactoryBot.define do
     email {Faker::Internet.unique.email}
     password {Faker::Internet.password(min_length: 6, max_length: 50)}
     role {"user"}
-  end
-
-  factory :account_user, parent: :account do
-    user {association :user}
+    activated {true}
+    activated_at {Time.zone.now}
   end
 end

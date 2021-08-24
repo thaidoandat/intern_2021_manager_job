@@ -3,12 +3,12 @@ FactoryBot.define do
     association :company
 
     name {Faker::Job.title}
-    quantity {rand(50)}
-    salary {rand(50)*100}
-    description {Faker::Lorem.sentence}
-    requirement {Faker::Lorem.sentence}
-    benefit {Faker::Lorem.sentence}
+    quantity {Faker::Number.between from: 10, to: 40}
+    salary {Faker::Number.between from: 100, to: 2000}
+    description {Faker::Lorem.paragraph}
+    requirement {Faker::Lorem.paragraph}
+    benefit {Faker::Lorem.paragraph}
     status {0}
-    expire_at {Faker::Date.forward(days: 128)}
+    expire_at {Time.zone.now}
   end
 end

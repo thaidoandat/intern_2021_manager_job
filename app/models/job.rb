@@ -27,7 +27,7 @@ class Job < ApplicationRecord
                      maximum: Settings.jobs.benefit.length.max}
   validates :status, :expire_at, presence: true
 
-  scope :newest, ->{order(created_at: :asc)}
+  scope :newest, ->{order(created_at: :desc)}
   scope :search_by_salary, (lambda do |salary|
     where("salary BETWEEN ? AND ?", salary.min_salary, salary.max_salary)
   end)
