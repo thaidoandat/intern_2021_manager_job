@@ -1,16 +1,13 @@
 class JobsController < ApplicationController
-  before_action :log_in_require, :load_company, except: %i(index show)
+  before_action :authenticate_account!, :load_company, except: %i(index show)
   before_action :load_job, except: %i(index new create)
   before_action :correct_company, only: %i(edit update destroy)
 
   def index
-    all_jobs = if params[:commit]
-                 Job.search_by search_params
-               else
-                 Job.newest.includes :company
-               end
-    @jobs = all_jobs.page(params[:page])
-                    .per Settings.jobs.max_items_per_page
+    @search = Job.ransack search_params
+    @jobs = @search.result.categories_cont_all(params[:categories])
+                   .includes(:company).page(params[:page])
+                   .per Settings.jobs.max_items_per_page
   end
 
   def new
@@ -82,8 +79,21 @@ class JobsController < ApplicationController
   end
 
   def search_params
-    params[:companies] = params[:companies].keys if params.key? :companies
+    return params[:q] if params.key? :q
+
+    params[:company_id_in] = params[:companies].keys if params.key? :companies
     params[:categories] = params[:categories].keys if params.key? :categories
-    params.permit [:salary_id, companies: [], categories: []]
+    get_salary
+    params.permit [:name_cont, :salary_lteq, :salary_gteq, company_id_in: []]
+  end
+
+  def get_salary
+    return if params[:salary_id].blank?
+
+    salary = Salary.find_by id: params[:salary_id]
+    return unless salary
+
+    params[:salary_lteq] = salary.max_salary
+    params[:salary_gteq] = salary.min_salary
   end
 end

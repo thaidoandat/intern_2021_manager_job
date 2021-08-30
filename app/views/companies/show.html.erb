@@ -55,12 +55,12 @@
                       </div>
                     </div>
                     <div class="search-job-in-company">
-                      <%= form_tag company_path, remote: true, method: :get do %>
+                      <%= search_form_for @search, url: company_path, remote: true do |f| %>
                         <span><i class="fa fa-search search-job-in-company-part"></i></span>
-                        <%= text_field_tag :name, nil, placeholder: t(".job_name"), class: "search-job-in-company-part" %>
+                        <%= f.text_field :name_cont, placeholder: t(".job_name"), class: "search-job-in-company-part" %>
                       <% end %>
                     </div>
-                    <% if !logged_in? || current_account.user? %>
+                    <% if !account_signed_in? || current_account.user? %>
                       <div id="company-jobs-user">
                         <%= render @jobs %>
                       </div>

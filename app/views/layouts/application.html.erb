@@ -10,10 +10,11 @@
   <body>
     <%= render partial: "layouts/header" %>
     <div class="theme-layout" id="scrollup">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>">
-          <%= message %>
-        </div>
+      <% if notice %>
+        <div class="alert alert-success"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-danger"><%= alert %></div>
       <% end %>
       <%= yield %>
       <%= render partial: "layouts/footer" %>

@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
-    resources :accounts, only: %i(new create)
+
+    devise_for :accounts, controllers: {sessions: "sessions", registrations: "accounts"}
+
+
     resources :users, except: %i(index destroy)
     resources :companies, except: %i(index destroy)
     resources :user_apply_jobs, only: %i(new create)
     resources :account_activations, only: :edit
     resources :password_resets, except: %i(show index destroy)
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     delete "/admin_logout", to: "admin_sessions#destroy"
 
     resources :admin, only: :index

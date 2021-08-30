@@ -1,5 +1,5 @@
 require "rails_helper"
-include SessionsHelper
+include ApplicationHelper
 
 describe CompaniesController, type: :controller do
   let!(:account_company){FactoryBot.create :account, role: "company"}
@@ -10,7 +10,7 @@ describe CompaniesController, type: :controller do
   let!(:company_params){FactoryBot.attributes_for(:company)}
   let(:params){{company: company_params}}
 
-  before{log_in account_company}
+  before{sign_in account_company}
 
   describe "GET #new" do
     it "should render the :new view" do
@@ -22,8 +22,8 @@ describe CompaniesController, type: :controller do
   describe "POST #create" do
     let!(:company_count){Company.count}
     before do
-      log_out
-      log_in account_company2
+      sign_out account_company
+      sign_in account_company2
     end
 
     context "when company information is valid" do
@@ -99,8 +99,8 @@ describe CompaniesController, type: :controller do
 
     context "when logged in and not current company" do
       before do
-        log_out
-        log_in account_user
+        sign_out account_company
+        sign_in account_user
         get :edit, params: {id: company.id}
       end
 
@@ -136,7 +136,7 @@ describe CompaniesController, type: :controller do
       end
 
       it "should redirect to current_owner's profile" do
-        expect(response).to redirect_to current_owner
+        expect(response).to redirect_to company
       end
 
       it "should change updated at field" do

@@ -6,21 +6,21 @@
       </div><!-- Logo -->
       <div class="btn-extars">
         <ul class="account-btns">
-          <% if logged_in? %>
+          <% if account_signed_in? %>
             <li class="signup-popup">
               <%= link_to t(".profile"), profile_link %>
             </li>
             <li class="signup-popup logout-btn">
-              <%= button_to t(".logout"), logout_path, method: :delete %>
+              <%= button_to t(".logout"), destroy_account_session_path, method: :delete %>
             </li>
           <% else %>
             <li class="signup-popup">
-              <%= link_to new_account_path do %>
+              <%= link_to new_account_registration_path do %>
                 <i class="fa fa-key"></i> <%= t ".signup" %>
               <% end %>
             </li>
             <li class="signin-popup">
-              <%= link_to login_path do %>
+              <%= link_to new_account_session_path do %>
                 <i class="fa fa-external-link-square"></i> <%= t ".login" %>
               <% end %>
             </li>
@@ -54,7 +54,7 @@
           </li>
 
           <!-- notification -->
-          <% if logged_in? %>
+          <% if account_signed_in? %>
             <li class="menu-item-has-children notification">
               <i class="far fa-bell"></i>
               <span id="notification-counter">

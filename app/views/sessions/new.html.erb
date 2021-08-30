@@ -12,7 +12,7 @@
               <div class="page-breacrumbs">
                 <ul class="breadcrumbs">
                   <li><%= link_to t(".home"), root_path %></li>
-                  <li><%= link_to t(".login"), login_path %></li>
+                  <li><%= link_to t(".login"), new_account_session_path %></li>
                 </ul>
               </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="account-popup-area signup-popup-box static">
               <div class="account-popup">
                 <h3><%= t ".login" %></h3>
-                <%= render "shared/login_form", object: :session, url: login_path %>
+                <%= render "shared/login_form", resource: :account %>
                 <div class="extra-login">
                   <div class="login-social">
                     <%= link_to "#", class: "fb-login" do %>

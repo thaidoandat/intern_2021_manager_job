@@ -16,19 +16,7 @@ RSpec.describe Job, type: :model do
     end
   end
 
-  describe ".search_by_salary" do
-    it "should return job2" do
-      expect(Job.search_by_salary(salary)).to eq [job2]
-    end
-  end
-
-  describe ".search_by_company_ids" do
-    it "should return job1, job2, job3" do
-      expect(Job.search_by_company_ids([company.id])).to eq [job1, job2, job3]
-    end
-  end
-
-  describe ".search_by_category_ids" do
+  describe ".categories_cont_all" do
     before do
       categories = {"1" => "1", "2" => "1"}
       job1.save_job_categories(categories)
@@ -37,14 +25,7 @@ RSpec.describe Job, type: :model do
 
     it "should return blank" do
       category_ids = ["3"]
-      expect(Job.search_by_category_ids(category_ids)).to be_blank
-    end
-  end
-
-  describe ".search_by" do
-    it "should return all job" do
-      search_params = {salary_id: "1"}
-      expect(Job.search_by(search_params)).to eq [job2]
+      expect(Job.categories_cont_all(category_ids)).to be_blank
     end
   end
 
