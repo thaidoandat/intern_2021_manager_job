@@ -15,6 +15,8 @@ RSpec.describe JobsController, type: :controller do
 
   let!(:job_params){{job: FactoryBot.attributes_for(:job)}}
 
+  let!(:salary){FactoryBot.create :salary, id: 1, min_salary: 1000, max_salary: 10000}
+
   before do
     log_in account1
   end
@@ -30,9 +32,27 @@ RSpec.describe JobsController, type: :controller do
       end
     end
 
-    context "when use job filter" do
+    context "when use job filter without choose selection" do
       before do
         get :index, params: {commit: 1}
+      end
+
+      it "should return all job" do
+        expect(response.response_code).to eq 200
+      end
+
+      it "should render index page" do
+        expect(response).to render_template :index
+      end
+    end
+
+    context "when use job filter with some selection" do
+      before do
+        get :index, params: {commit: 1, salary_id: "1"}
+      end
+
+      it "should return suitable job" do
+        expect(response.response_code).to eq 200
       end
 
       it "should render suitable job" do

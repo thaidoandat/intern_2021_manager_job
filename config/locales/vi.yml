@@ -112,7 +112,7 @@ vi:
       browse_job_by: "Tìm việc bằng:"
       filter: "Bộ lọc"
       job_title: "Tên công việc"
-      search: "Tìm kiếm"
+      submit_text: "Search"
   accounts:
     new:
       register: "Đăng kí"

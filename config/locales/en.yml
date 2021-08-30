@@ -112,7 +112,7 @@ en:
       browse_job_by: "Browse job offers by"
       filter: "Filter"
       job_title: "Job title"
-      search: "Search"
+      submit_text: "Search"
   accounts:
     new:
       register: "Register"

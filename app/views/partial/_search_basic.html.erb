@@ -15,16 +15,16 @@
                 <span>
                   <%= t ".small_intro" %>
                 </span>
-                <%= form_tag(jobs_path, method: :get) do %>
+                <%= search_form_for object do |f| %>
                   <div class="row">
                     <div class="col-lg-10 col-md-5 col-sm-12 col-xs-12">
                       <div class="job-field">
-                        <%= text_field_tag :key, nil, placeholder: t(".job_title") %>
+                        <%= f.text_field :name_cont, placeholder: t(".job_title") %>
                         <i class="fas fa-keyboard-o"></i>
                       </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 ">
-                      <%= submit_tag t(".search"), class: "btn btn-primary btn-lg basic-search-btn" %>
+                      <%= f.submit t(".submit_text"), class: "btn btn-primary btn-lg basic-search-btn" %>
                     </div>
                   </div>
                 <% end %>
