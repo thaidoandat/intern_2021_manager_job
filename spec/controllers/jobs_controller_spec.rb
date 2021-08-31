@@ -1,5 +1,4 @@
 require "rails_helper"
-include SessionsHelper
 
 RSpec.describe JobsController, type: :controller do
   let(:account1){FactoryBot.create :account, role: "company"}
@@ -18,7 +17,7 @@ RSpec.describe JobsController, type: :controller do
   let!(:salary){FactoryBot.create :salary, id: 1, min_salary: 1000, max_salary: 10000}
 
   before do
-    log_in account1
+    sign_in account1
   end
 
   describe "GET /index" do
@@ -64,8 +63,8 @@ RSpec.describe JobsController, type: :controller do
   describe "GET /new" do
     context "when current account belongs to user" do
       before do
-        log_out
-        log_in account4
+        sign_out account1
+        sign_in account4
         get :new
       end
 
@@ -76,8 +75,8 @@ RSpec.describe JobsController, type: :controller do
 
     context "when logged in but haven't had company info" do
       before do
-        log_out
-        log_in account3
+        sign_out account1
+        sign_in account3
         get :new
       end
 

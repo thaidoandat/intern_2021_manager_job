@@ -12,7 +12,7 @@
               <div class="page-breacrumbs">
                 <ul class="breadcrumbs">
                   <li><%= link_to t(".home"), root_path %></li>
-                  <li><%= link_to t(".register"), new_account_path %></li>
+                  <li><%= link_to t(".register"), new_account_registration_path %></li>
                 </ul>
               </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="account-popup-area signup-popup-box static">
               <div class="account-popup">
                 <h3><%= t ".sign_up" %></h3>
-                <%= render "shared/signup_form", object: @account %>
+                <%= render "shared/signup_form", resource: :account %>
               </div>
             </div>
           </div>

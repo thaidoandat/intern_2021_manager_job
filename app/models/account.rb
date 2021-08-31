@@ -1,5 +1,7 @@
 class Account < ApplicationRecord
-  attr_accessor :activation_token, :remember_token, :reset_token
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  attr_accessor :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest, :set_default_avatar
 
@@ -29,8 +31,6 @@ class Account < ApplicationRecord
 
   enum role: ROLES_HASH
 
-  has_secure_password
-
   class << self
     def digest string
       min_cost = ActiveModel::SecurePassword.min_cost
@@ -41,15 +41,6 @@ class Account < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
-  end
-
-  def remember
-    self.remember_token = Account.new_token
-    update remember_digest: Account.digest(remember_token)
-  end
-
-  def forget
-    update remember_digest: nil
   end
 
   def activate
@@ -72,13 +63,6 @@ class Account < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.accounts.email.expired_hours.hours.ago
-  end
-
-  def authenticated? attribute, token
-    digest = send "#{attribute}_digest"
-    return false if digest.nil?
-
-    BCrypt::Password.new(digest).is_password? token
   end
 
   private

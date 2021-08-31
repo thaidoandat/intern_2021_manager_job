@@ -60,7 +60,7 @@
                         <%= f.text_field :name_cont, placeholder: t(".job_name"), class: "search-job-in-company-part" %>
                       <% end %>
                     </div>
-                    <% if !logged_in? || current_account.user? %>
+                    <% if !account_signed_in? || current_account.user? %>
                       <div id="company-jobs-user">
                         <%= render @jobs %>
                       </div>

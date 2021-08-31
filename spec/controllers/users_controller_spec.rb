@@ -1,5 +1,5 @@
 require "rails_helper"
-include SessionsHelper
+include ApplicationHelper
 
 RSpec.describe UsersController, type: :controller do
   let(:account_1){FactoryBot.create :account, role: "user"}
@@ -23,7 +23,7 @@ RSpec.describe UsersController, type: :controller do
   describe "GET #new" do
     context "when current account is user" do
       before do
-        log_in account_1
+        sign_in account_1
         get :new
       end
 
@@ -34,7 +34,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "when current account is not user" do
       before do
-        log_in account_2
+        sign_in account_2
         get :new
       end
 
@@ -51,7 +51,7 @@ RSpec.describe UsersController, type: :controller do
   describe "POST #create" do
     let!(:user_count){User.count}
 
-    before {log_in account_1}
+    before {sign_in account_1}
 
     context "when params is valid" do
       before do
@@ -130,7 +130,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "when not current user" do
       before do
-        log_in account_4
+        sign_in account_4
         get :edit, params: {id: account_3.user.id}
       end
 
@@ -145,7 +145,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "when user is current user" do
       before do
-        log_in account_3
+        sign_in account_3
         get :edit, params: {id: account_3.user.id}
       end
 
@@ -158,7 +158,7 @@ RSpec.describe UsersController, type: :controller do
   describe "PATCH /update" do
     let!(:previous_name){account_3.user.name}
 
-    before {log_in account_3}
+    before {sign_in account_3}
 
     context "when update successfully" do
       before do
@@ -175,7 +175,7 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it "redirect to current_owner" do
-        expect(response).to redirect_to current_owner
+        expect(response).to redirect_to account_3.user
       end
     end
 

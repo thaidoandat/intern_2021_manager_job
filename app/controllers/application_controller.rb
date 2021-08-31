@@ -1,13 +1,21 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  include SessionsHelper
+  include OwnerHelper
 
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
   def handle_record_not_found
     flash[:danger] = t "controller.user_not_found"
     redirect_to root_path
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    added_attrs = Account::ACCOUNT_PARAMS
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
   end
 
   private
@@ -20,13 +28,6 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
-  end
-
-  def log_in_require
-    return if logged_in?
-
-    store_location
-    redirect_to login_path
   end
 
   def find_job

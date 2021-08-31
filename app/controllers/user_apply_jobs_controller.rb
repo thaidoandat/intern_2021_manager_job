@@ -1,9 +1,11 @@
 class UserApplyJobsController < ApplicationController
-  before_action :log_in_require, :check_role_user,
+  before_action :authenticate_account!, :check_role_user,
                 :get_user_info, except: %i(show)
   before_action :find_job, only: %i(create)
 
-  def new; end
+  def new
+    redirect_to new_user_path if current_owner.nil?
+  end
 
   def create
     if @user.update user_params

@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :log_in_require, :load_company, except: %i(index show)
+  before_action :authenticate_account!, :load_company, except: %i(index show)
   before_action :load_job, except: %i(index new create)
   before_action :correct_company, only: %i(edit update destroy)
 
