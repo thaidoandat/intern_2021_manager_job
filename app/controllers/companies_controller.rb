@@ -15,8 +15,8 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @search = @company.jobs.ransack params[:q]
-    @jobs = @search.result.newest.page(params[:page])
+    @search = Job.ransack params[:q]
+    @jobs = @search.result.includes([:company]).newest.page(params[:page])
                    .per Settings.companies.page.max
   end
 
