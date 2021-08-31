@@ -8,7 +8,7 @@ class AdminController < ApplicationController
   private
 
   def check_role_admin
-    return if logged_in? && current_account.admin?
+    return if account_signed_in? && current_account.admin?
 
     redirect_to new_admin_session_path
     flash[:warning] = t "controller.no_permission"

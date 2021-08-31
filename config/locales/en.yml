@@ -200,6 +200,9 @@ en:
     not_found: "Job not found"
     index:
       job_count: "%{num} Jobs & Vacancies"
+      from: "Created from"
+      to: "To"
+      name: "Job name/Company name"
     new:
       post_job: "Post New Job"
       submit_text: "Create Job"

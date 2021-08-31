@@ -16,6 +16,8 @@ class CompaniesController < ApplicationController
 
   def show
     @search = Job.ransack params[:q]
+    @search.sorts = Job::SORT_PARAMS if @search.sorts.empty?
+
     @jobs = @search.result.includes([:company]).newest.page(params[:page])
                    .per Settings.companies.page.max
   end
