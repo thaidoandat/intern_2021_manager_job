@@ -5,13 +5,12 @@ class ApplicationController < ActionController::Base
   include OwnerHelper
 
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
-
-  def handle_record_not_found
-    flash[:danger] = t "controller.user_not_found"
-    redirect_to root_path
-  end
+  rescue_from CanCan::AccessDenied, with: :handle_access_denied
 
   protected
+  def current_ability
+    @current_ability ||= Ability.new current_account
+  end
 
   def configure_permitted_parameters
     added_attrs = Account::ACCOUNT_PARAMS
@@ -19,6 +18,15 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def handle_record_not_found
+    flash[:alert] = t "controller.user_not_found"
+    redirect_to root_path
+  end
+
+  def handle_access_denied
+    flash[:alert] = t "controller.no_permission"
+    redirect_to root_path
+  end
 
   def set_locale
     locale = params[:locale].to_s.strip.to_sym

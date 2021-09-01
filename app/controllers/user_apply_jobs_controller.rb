@@ -1,7 +1,7 @@
 class UserApplyJobsController < ApplicationController
-  before_action :authenticate_account!, :check_role_user,
-                :get_user_info, except: %i(show)
+  before_action :authenticate_account!, :get_user_info, except: %i(show)
   before_action :find_job, only: %i(create)
+  authorize_resource
 
   def new
     redirect_to new_user_path if current_owner.nil?
@@ -24,11 +24,6 @@ class UserApplyJobsController < ApplicationController
   end
 
   private
-  def check_role_user
-    return if current_account.user?
-
-    redirect_to root_path
-  end
 
   def get_user_info
     @user = current_account.user

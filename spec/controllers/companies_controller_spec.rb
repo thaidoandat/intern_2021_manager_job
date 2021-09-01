@@ -1,4 +1,5 @@
 require "rails_helper"
+require "pry"
 include ApplicationHelper
 
 describe CompaniesController, type: :controller do
@@ -105,7 +106,7 @@ describe CompaniesController, type: :controller do
       end
 
       it "should flash no permission" do
-        expect(flash[:warning]).to eq I18n.t("controller.no_permission")
+        expect(flash[:alert]).to eq I18n.t("controller.no_permission")
       end
 
       it "should redirect to root path" do

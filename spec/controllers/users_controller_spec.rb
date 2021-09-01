@@ -39,7 +39,7 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it "popup no_permission flash warning" do
-        expect(flash[:warning]).to eq I18n.t("controller.no_permission")
+        expect(flash[:alert]).to eq I18n.t("controller.no_permission")
       end
 
       it "redirect to root_path" do
@@ -135,7 +135,7 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it "popup no_permission flash" do
-        expect(flash[:warning]).to eq I18n.t("controller.no_permission")
+        expect(flash[:alert]).to eq I18n.t("controller.no_permission")
       end
 
       it "redirect to root_path" do

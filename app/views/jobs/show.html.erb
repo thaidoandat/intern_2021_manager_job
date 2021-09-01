@@ -31,7 +31,7 @@
               <p><i class="fa fa-phone"></i><%= @job.company_phone_number %></p>
               <p><i class="fa fa-envelope-o"></i> <%= @job.company_email %></p>
             </div>
-            <% if current_account&.company? %>
+            <% if can? :manage, @job %>
               <%= link_to edit_job_path(@job), class: "apply-job-btn" do %>
                 <i class="fa fa-paper-plane"></i><%= t ".edit" %>
               <% end %>

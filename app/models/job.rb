@@ -2,6 +2,8 @@ class Job < ApplicationRecord
   JOB_PARAMS = %i(name quantity salary description
                   requirement benefit status expire_at).freeze
 
+  SORT_PARAMS = ["name asc", "expire_at desc"].freeze
+
   belongs_to :company
   has_many :user_apply_jobs, dependent: :destroy
   has_many :users, through: :user_apply_jobs
@@ -26,6 +28,12 @@ class Job < ApplicationRecord
             length: {minimum: Settings.jobs.benefit.length.min,
                      maximum: Settings.jobs.benefit.length.max}
   validates :status, :expire_at, presence: true
+
+  ransack_alias :name, :name_or_company_name
+
+  ransacker :created_at, type: :date do
+    Arel.sql("date(jobs.created_at)")
+  end
 
   scope :newest, ->{order(created_at: :desc)}
   scope :categories_cont_all, (lambda do |category_ids|

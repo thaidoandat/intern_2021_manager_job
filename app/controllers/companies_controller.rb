@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
-  before_action :check_role_company, only: %i(new create edit update)
   before_action :load_company, except: %i(new create)
+  authorize_resource
 
   def new
     @company = current_account.build_company
@@ -16,6 +16,8 @@ class CompaniesController < ApplicationController
 
   def show
     @search = Job.ransack params[:q]
+    @search.sorts = Job::SORT_PARAMS if @search.sorts.empty?
+
     @jobs = @search.result.includes([:company]).newest.page(params[:page])
                    .per Settings.companies.page.max
   end
@@ -33,13 +35,6 @@ class CompaniesController < ApplicationController
   end
 
   private
-  def check_role_company
-    return if current_account.company?
-
-    flash[:warning] = t "controller.no_permission"
-    redirect_to root_path
-  end
-
   def company_params
     params.require(:company).permit Company::COMPANY_PARAMS
   end

@@ -96,7 +96,7 @@
       </div>
       <div class="row row-edit-button">
         <div class="col-lg-12">
-          <% if current_account.user == @user %>
+          <% if can? :manage, @user %>
             <%= link_to edit_user_path do%>
               <button>
                 <%= t ".edit_btn" %>
@@ -109,7 +109,7 @@
   </div>
 </section>
 
-<% if current_account.user == @user %>
+<% if can? :manage, @user %>
   <section class="title-applied-job">
     <div class="container">
       <div class="pf-title pf-title-bold">

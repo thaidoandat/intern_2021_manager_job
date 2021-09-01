@@ -227,7 +227,7 @@ RSpec.describe JobsController, type: :controller do
       end
 
       it "should redirect to show job page" do
-        expect(response).to redirect_to job2
+        expect(response).to redirect_to root_path
       end
     end
 

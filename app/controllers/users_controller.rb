@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  before_action :check_role_user, only: %i(new create)
   before_action :find_user, only: %i(show edit update)
-  before_action :correct_user, only: %i(edit update)
+  authorize_resource
 
   def new
     @user = current_account.build_user
@@ -39,12 +38,6 @@ class UsersController < ApplicationController
   end
 
   private
-  def check_role_user
-    return if current_account.user?
-
-    flash[:warning] = t "controller.no_permission"
-    redirect_to root_path
-  end
 
   def user_params
     params.require(:user).permit User::USER_PARAMS
@@ -57,13 +50,6 @@ class UsersController < ApplicationController
 
   def user_update_params
     params.require(:user).permit User::UPDATE_PARAMS
-  end
-
-  def correct_user
-    return if current_owner == @user
-
-    redirect_to root_path
-    flash[:warning] = t "controller.no_permission"
   end
 
   def find_user

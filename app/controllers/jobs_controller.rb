@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_account!, :load_company, except: %i(index show)
   before_action :load_job, except: %i(index new create)
-  before_action :correct_company, only: %i(edit update destroy)
+  authorize_resource
 
   def index
     @search = Job.ransack search_params
@@ -68,10 +68,6 @@ class JobsController < ApplicationController
 
     flash[:danger] = t "controller.job_not_found"
     redirect_to root_path
-  end
-
-  def correct_company
-    redirect_to @job unless @job.company == current_account.company
   end
 
   def job_params
