@@ -71,8 +71,8 @@
                       <table class="table table-striped table-hover">
                         <thead class="thead-dark">
                           <tr>
-                            <th scope="col" class="tb-title"><%= t ".name" %></th>
-                            <th scope="col" class="tb-title"><%= t ".expire_at" %></th>
+                            <th scope="col" class="tb-title sort-name"><%= sort_link @search, :name, t(".name"), {}, {remote: true, method: :get} %></th>
+                            <th scope="col" class="tb-title sort-expire_at"><%= sort_link @search, :expire_at, t(".expire_at"), {}, {remote: true, method: :get} %></th>
                             <th scope="col" class="tb-title"><%= t ".candidates" %></th>
                             <th scope="col" class="tb-title"></th>
                           </tr>

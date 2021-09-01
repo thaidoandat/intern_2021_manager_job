@@ -9,6 +9,25 @@
         <div class="col-lg-8 column">
           <div class="modrn-joblist np">
             <h5 class="job-count"><%= t ".job_count", num: @jobs.total_count %></h5>
+            <%= search_form_for @search do |f| %>
+              <table class="table table-borderless">
+                <tr>
+                  <th></th>
+                  <th><%= t ".from" %></th>
+                  <th><%= t ".to" %></th>
+                </tr>
+                <tr>
+                  <td><%= f.search_field :name_cont, placeholder: t(".name") %></td>
+                  <td><%= f.date_field :created_at_gteq, value: Settings.date_format %></td>
+                  <td><%= f.date_field :created_at_lteq, value: Settings.date_format %></td>
+                  <td>
+                    <%= button_tag type: "submit" do %>
+                      <i class="fa fa-search"></i>
+                    <% end %>
+                  </td>
+                </tr>
+              </table>
+            <% end %>
             <div class="job-list-modern">
               <div class="job-listings-sec" id="jobs-list">
                 <%= render @jobs %>
