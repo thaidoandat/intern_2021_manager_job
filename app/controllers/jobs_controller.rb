@@ -75,7 +75,7 @@ class JobsController < ApplicationController
   end
 
   def search_params
-    return params[:q] if params.key? :q
+    return params[:search] if params.key? :search
 
     params[:company_id_in] = params[:companies].keys if params.key? :companies
     params[:categories] = params[:categories].keys if params.key? :categories

@@ -280,6 +280,10 @@ vi:
     show:
       list_candidates: "Danh sách ứng viên"
       home: "Home"
+      name: "Ten:"
+      status: "Trang thai:"
+      applied_from: "Ung tuyen tu:"
+      applied_to: "Ung tuyen den:"
     user_apply_job:
       accept: "Chấp nhận"
       accepted: "Đã chấp nhận"

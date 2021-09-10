@@ -1,12 +1,12 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
+  devise_for :accounts, controllers: {sessions: "sessions", registrations: "accounts",
+    omniauth_callbacks: "omniauth_callbacks"}
+
   scope "(:locale)", locale: /en|vi/ do
     mount Sidekiq::Web => "/sidekiq"
     root "static_pages#home"
-
-    devise_for :accounts, controllers: {sessions: "sessions", registrations: "accounts"}
-
 
     resources :users, except: %i(index destroy)
     resources :companies, except: %i(index destroy)

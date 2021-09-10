@@ -21,6 +21,9 @@ class UserApplyJobsController < ApplicationController
   def show
     @job = Job.includes(:company).find_by id: params[:id]
     @user_apply_jobs = @job.user_apply_jobs.includes(:user)
+
+    @search = @user_apply_jobs.ransack params[:search]
+    @user_apply_jobs = @search.result.includes(:user)
   end
 
   private

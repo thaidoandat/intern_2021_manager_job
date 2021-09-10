@@ -7,6 +7,9 @@
       <i class="fa fa-map-marker"></i>
       <%= user_apply_job.user.address %>
     </div>
+    <div class="applied-time">
+      <%= user_apply_job.created_at.strftime Settings.date_format %>
+    </div>
   </div>
   <div class="job-style-bx job-style-bx-custom">
     <% if user_apply_job.pending? %>

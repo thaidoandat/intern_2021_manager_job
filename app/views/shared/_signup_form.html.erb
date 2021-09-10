@@ -12,5 +12,7 @@
     <%= f.select :role, role_options %>
   </div>
   <%= f.submit t(".submit_text"), class:"btn btn-primary" %>
-  <%= render "devise/shared/links" %>
+  <div>
+    <%= render "devise/shared/links" %>
+  </div>
 <% end %>

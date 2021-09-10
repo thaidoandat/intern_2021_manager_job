@@ -9,6 +9,12 @@ class UserApplyJob < ApplicationRecord
   validates :user_id, :job_id, presence: true
   validates :status, presence: true, allow_nil: true
 
+  ransack_alias :name, :user_name
+
+  ransacker :created_at, type: :date do
+    Arel.sql("date(user_apply_jobs.created_at)")
+  end
+
   delegate :company, to: :job
   delegate :name, :account, to: :user, prefix: true
 
