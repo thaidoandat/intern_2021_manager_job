@@ -33,7 +33,7 @@
                       </div>
                     </div>
                   </div>
-                  <% if current_account&.company? %>
+                  <% if can? :manage, @company %>
                     <div class="col-lg-2">
                       <div class="emply-btns">
                         <%= link_to t(".edit_profile"), edit_company_path, class: "edit-profile" %>
