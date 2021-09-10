@@ -1,6 +1,8 @@
 class Account < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:google_oauth2]
+
   attr_accessor :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest, :set_default_avatar
@@ -63,6 +65,15 @@ class Account < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.accounts.email.expired_hours.hours.ago
+  end
+
+  def self.from_omniauth access_token
+    data = access_token.info
+    Account.where(email: data["email"])
+           .first_or_create(email: data["email"],
+                            password: Devise.friendly_token[0, 20],
+                            provider: access_token[:provider],
+                            uid: access_token[:uid])
   end
 
   private

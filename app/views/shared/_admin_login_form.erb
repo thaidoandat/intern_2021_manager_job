@@ -1,0 +1,15 @@
+<%= form_for resource, as: resource_name, url: admin_sessions_path(resource_name) do |f| %>
+  <div class="form-login-admin">
+    <div>
+      <%= f.text_field :email, placeholder: t(".email"),  class:"admin-login" %>
+    </div>
+  </div>
+  <div class="form-login-admin">
+    <div>
+      <%= f.password_field :password, placeholder: t(".password"),  class:"admin-login" %>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= f.submit t(".log_in"), class: "btn btn-primary" %>
+  </div>
+<% end %>

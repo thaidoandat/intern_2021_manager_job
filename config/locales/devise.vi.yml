@@ -45,6 +45,18 @@ vi:
       send_instructions: Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản trong vài phút nữa.
       send_paranoid_instructions: Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản trong vài phút nữa.
       unlocked: Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục.
+    shared:
+      links:
+        login: "Đăng nhập"
+        register: "Đăng ký"
+        registrations: "Đăng ký"
+        passwords: "mật khẩu"
+        forgot_password: "Quên mật khẩu?"
+        confirmations: "xác nhận"
+        not_receive_confirmation: "Không nhận được hướng dẫn xác thực?"
+        unlocks: "mở khóa"
+        not_receive_unlock: "Không nhận được hướng dẫn mở khóa?"
+        accounts: "accounts"
   errors:
     messages:
       already_confirmed: đã được xác nhận, vui lòng đăng nhập để tiếp tục.
