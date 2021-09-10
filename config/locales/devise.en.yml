@@ -58,6 +58,7 @@ en:
         not_receive_confirmation: "Didn't receive confirmation instructions?"
         unlocks: "unlocks"
         not_receive_unlock: "Didn't receive unlock instructions?"
+        accounts: "accounts"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
