@@ -24,6 +24,29 @@
             </div>
           </div>
         </section>
+        <%= search_form_for @search, url: user_apply_job_path(@job) do |f| %>
+          <div class="col-lg-3">
+            <%= t ".name" %>
+            <%= f.search_field :name_cont, placeholder: "name" %>
+          </div>
+          <div class="col-lg-2">
+            <%= t ".status" %>
+            <%= f.select :status_cont, options_for_select(status_options), include_blank: true %>
+          </div>
+          <div class="col-lg-3">
+            <%= t ".applied_from" %>
+            <%= f.date_field :created_at_gteq, value: Settings.date_format %>
+          </div>
+          <div class="col-lg-3">
+            <%= t ".applied_to" %>
+            <%= f.date_field :created_at_lteq, value: Settings.date_format %>
+          </div>
+          <div class="col-lg-1 col-submit">
+            <%= button_tag type: "submit" do %>
+              <i class="fa fa-search"></i>
+            <% end %>
+          </div>
+        <% end %>
         <%= render partial: "user_apply_jobs/user_apply_job",
           collection: @user_apply_jobs, as: :user_apply_job %>
       </div>

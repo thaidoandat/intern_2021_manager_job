@@ -280,6 +280,10 @@ en:
     show:
       list_candidates: "List Candidates"
       home: "Home"
+      name: "Name:"
+      status: "Status:"
+      applied_from: "Applied from:"
+      applied_to: "Applied to:"
     user_apply_job:
       accept: "Accept"
       accepted: "Accepted"
