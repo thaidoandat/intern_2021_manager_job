@@ -34,6 +34,7 @@ gem "simplecov-rcov"
 gem "sinatra", github: "sinatra/sinatra"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
+gem 'whenever', require: false
 
 group :development do
   gem "bullet"

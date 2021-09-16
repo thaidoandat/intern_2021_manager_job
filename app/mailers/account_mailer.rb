@@ -8,4 +8,9 @@ class AccountMailer < ApplicationMailer
     @account = account
     mail to: account.email, subject: t("mailers.account_mailer.password_reset")
   end
+
+  def monthly_email user
+    @user = user
+    mail to: user.email, subject: t("mailers.account_mailer.monthly_email")
+  end
 end
