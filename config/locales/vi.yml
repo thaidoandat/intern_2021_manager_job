@@ -307,6 +307,8 @@ vi:
     account_mailer:
       subject_email: "Xác thực tài khoản"
       password_reset: "Lấy lại mật khẩu"
+      monthly_email: "Email hàng tháng"
+      wishes: "Chúc bạn tháng mới của bạn sẽ tràn ngập niềm hạnh phúc của nụ cười, xúc cảm của yêu thương và còn nhiều hơn thế."
   account_mailer:
     account_activation:
       app_name: "ITViec"

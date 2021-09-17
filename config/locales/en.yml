@@ -307,6 +307,8 @@ en:
     account_mailer:
       subject_email: "Account activation"
       password_reset: "Password reset"
+      monthly_email: "Monthly Email"
+      wishes: "May your coming month surprise you with the happiness of smiles, the feeling of love and so on."
   account_mailer:
     account_activation:
       app_name: "ITViec"
