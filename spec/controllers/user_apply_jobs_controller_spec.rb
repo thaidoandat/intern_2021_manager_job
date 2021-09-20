@@ -49,7 +49,7 @@ RSpec.describe UserApplyJobsController, type: :controller do
   end
 
   describe "POST /create" do
-    let!(:user_apply_job_count){UserApplyJob.count}
+    let!(:count_before){UserApplyJob.count}
 
     before {sign_in account_1}
 
@@ -58,9 +58,7 @@ RSpec.describe UserApplyJobsController, type: :controller do
         post :create, params: params
       end
 
-      it "increase number of user_apply_job by 1" do
-        expect(UserApplyJob.count).to eq(user_apply_job_count + 1)
-      end
+      it_behaves_like "create a new object successfully", UserApplyJob
 
       it "redirect to user_path" do
         expect(response).to redirect_to account_1.user
@@ -73,9 +71,7 @@ RSpec.describe UserApplyJobsController, type: :controller do
         post :create, params: params
       end
 
-      it "don't change number of user_apply_job" do
-        expect(UserApplyJob.count).to eq(user_apply_job_count)
-      end
+      it_behaves_like "create a new object failed", UserApplyJob
     end
   end
 end

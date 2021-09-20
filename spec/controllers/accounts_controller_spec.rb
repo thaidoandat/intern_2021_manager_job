@@ -6,24 +6,17 @@ describe AccountsController, type: :controller do
 
   before{@request.env["devise.mapping"] = Devise.mappings[:account]}
 
-  describe "GET #new" do
-    it "should render the :new view" do
-      get :new
-      expect(response).to render_template :new
-    end
-  end
+  it_behaves_like "render :new view"
 
   describe "POST #create" do
-    let!(:account_count){Account.count}
+    let!(:count_before){Account.count}
 
     context "when params is valid" do
       before do
         post :create, params: account_params
       end
 
-      it "increase number of account by 1" do
-        expect(Account.count).to eq(account_count + 1)
-      end
+      it_behaves_like "create a new object successfully", Account
 
       it "redirect to root_path" do
         expect(response).to redirect_to root_path
@@ -36,9 +29,7 @@ describe AccountsController, type: :controller do
         post :create, params: account_params
       end
 
-      it "don't change number of account" do
-        expect(Account.count).to eq(account_count)
-      end
+      it_behaves_like "create a new object failed", Account
 
       it "redirect to new_user_path" do
         expect(response).to render_template :new
