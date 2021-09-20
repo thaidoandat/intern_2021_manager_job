@@ -13,15 +13,10 @@ describe CompaniesController, type: :controller do
 
   before{sign_in account_company}
 
-  describe "GET #new" do
-    it "should render the :new view" do
-      get :new
-      expect(response).to render_template :new
-    end
-  end
+  it_behaves_like "render :new view"
 
   describe "POST #create" do
-    let!(:company_count){Company.count}
+    let!(:count_before){Company.count}
     before do
       sign_out account_company
       sign_in account_company2
@@ -38,9 +33,7 @@ describe CompaniesController, type: :controller do
         expect(response).to redirect_to root_path
       end
 
-      it "should up number of companies to 1" do
-        expect(Company.count).to eq(company_count + 1)
-      end
+      it_behaves_like "create a new object successfully", Company
     end
 
     context "when company information is invalid" do
@@ -57,9 +50,7 @@ describe CompaniesController, type: :controller do
         expect(assigns(:company).errors.messages[:name]).to be_present
       end
 
-      it "should not change number of companies" do
-        expect(Company.count).to eq(company_count)
-      end
+      it_behaves_like "create a new object failed", Company
     end
   end
 

@@ -5,13 +5,7 @@ RSpec.describe SessionsController, type: :controller do
 
   before{@request.env["devise.mapping"] = Devise.mappings[:account]}
 
-  describe "GET /new" do
-    before {get :new}
-
-    it "render template :new" do
-      expect(response).to render_template :new
-    end
-  end
+  it_behaves_like "render :new view"
 
   describe "POST /create" do
     context "when login with correct params" do
